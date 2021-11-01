@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".SplashActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/circle_splash" />
+
+    <View
+        android:id="@+id/image_splash"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+        android:background="@drawable/hands___buying__colors_"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        style="@style/AppName"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="#bfbfbf"
+        android:shadowDx="0"
+        android:shadowDy="10"
+        android:shadowRadius="1"
+        android:layout_below="@id/image_splash"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giá trị của một cuốn sách không nằm ở vẻ bề ngoài"
+        android:textColor="@color/main"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/app_name"
+        android:layout_marginTop="20dp"
+        style="@style/Caption"/>
+
+
+</RelativeLayout>

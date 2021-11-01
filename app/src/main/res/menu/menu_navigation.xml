@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:title="Trang chủ"
+        android:icon="@drawable/ic_akar_icons_home"
+        app:cnb_iconColor="@color/background"
+        app:cnb_textColor="@color/background"
+        app:cnb_backgroundColor="@color/main"
+        app:cnb_unselectedColor="@color/body"/>
+
+    <item
+        android:id="@+id/add_book"
+        android:title="Đăng bán"
+        android:icon="@drawable/ic_akar_icons_plus"
+        app:cnb_iconColor="@color/background"
+        app:cnb_textColor="@color/background"
+        app:cnb_backgroundColor="@color/main"
+        app:cnb_unselectedColor="@color/body"/>
+
+    <item
+        android:id="@+id/notification"
+        android:title="Thông báo"
+        android:icon="@drawable/ic_akar_icons_bell"
+        app:cnb_iconColor="@color/background"
+        app:cnb_textColor="@color/background"
+        app:cnb_backgroundColor="@color/main"
+        app:cnb_unselectedColor="@color/body"/>
+
+    <item
+        android:id="@+id/account"
+        android:title="Tài khoản"
+        android:icon="@drawable/ic_akar_icons_person"
+        app:cnb_iconColor="@color/background"
+        app:cnb_textColor="@color/background"
+        app:cnb_backgroundColor="@color/main"
+        app:cnb_unselectedColor="@color/body"/>
+</menu>
