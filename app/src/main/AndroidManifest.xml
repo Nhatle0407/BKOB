@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BKOB">
         <activity
-            android:name="com.example.bkob.MainActivity"
+            android:name="com.example.bkob.views.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.bkob.AuthenticationActivity"
+            android:name="com.example.bkob.views.AuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.bkob.SplashActivity"
+            android:name="com.example.bkob.views.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

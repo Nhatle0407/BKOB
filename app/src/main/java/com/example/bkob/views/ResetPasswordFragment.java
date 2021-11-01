@@ -1,4 +1,4 @@
-package com.example.bkob;
+package com.example.bkob.views;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

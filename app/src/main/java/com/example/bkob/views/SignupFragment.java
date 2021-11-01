@@ -1,4 +1,4 @@
-package com.example.bkob;
+package com.example.bkob.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentSignupBinding;
 
 public class SignupFragment extends Fragment {
