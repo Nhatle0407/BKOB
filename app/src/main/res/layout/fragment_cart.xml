@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.CartFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:id="@+id/btn_back_cart"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#f8f8f8"
+        android:src="@drawable/ic_akar_icons_arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/cart"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Giỏ hàng"
+        android:textColor="@color/header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_receive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cart"
+        android:layout_marginTop="40dp"
+        tools:listitem="@layout/item_cart" />
+</RelativeLayout>

@@ -45,15 +45,21 @@
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/navigation_rounded.xml" value="0.1882051282051282" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/activity_authentication.xml" value="0.12817028985507245" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_.xml" value="0.1" />
-        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_cart.xml" value="0.25" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_detail_sale.xml" value="0.25" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_login2.xml" value="0.11639492753623189" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_order.xml" value="0.25" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_order_r.xml" value="0.22" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_receive.xml" value="0.25" />
-        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_search.xml" value="0.5" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_search.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_selling.xml" value="0.22" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_signup.xml" value="0.1" />
-        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_receive.xml" value="0.5" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_cart.xml" value="0.33" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_receive.xml" value="0.3915343915343915" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_search.xml" value="0.5" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_selling.xml" value="0.25" />
       </map>
     </option>
   </component>

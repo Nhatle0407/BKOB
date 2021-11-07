@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background_receive"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_height="130dp">
+    <ImageView
+        android:id="@+id/avatar_cart"
+        android:layout_width="68dp"
+        android:layout_height="102dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/giaitich"
+        android:contentDescription="TODO" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/avatar_cart">
+        <TextView
+            android:id="@+id/name_cart"
+            style="@style/Title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Giải tích 2"
+            android:textColor="@color/header" />
+        <RelativeLayout
+            android:layout_below="@id/name_cart"
+            android:id="@+id/container_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/from_receive"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                style="@style/Body"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Số lượng:"
+                android:textColor="@color/header" />
+            <TextView
+                android:id="@+id/cart_add"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text=" + " />
+
+            <TextView
+                android:id="@+id/cart_quanty"
+                style="@style/BoldBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/cart_add"
+                android:text=" 1 " />
+
+            <TextView
+                android:id="@+id/cart_sub"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/cart_quanty"
+                android:clickable="true"
+                android:focusable="true"
+                android:text=" - " />
+        </RelativeLayout>
+
+
+        <TextView
+            android:textSize="16sp"
+            android:id="@+id/price_receive"
+            style="@style/Price"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/container_cart"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="20.0000đ" />
+    </RelativeLayout>
+    <ImageButton
+        android:id="@+id/remove_cart"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:src="@drawable/ic_akar_icons_trash_can"
+        android:contentDescription="TODO" />
+
+</RelativeLayout>

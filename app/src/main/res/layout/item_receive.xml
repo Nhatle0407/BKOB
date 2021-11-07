@@ -48,6 +48,7 @@
         <TextView
             android:id="@+id/price_receive"
             style="@style/Price"
+            android:textSize="16sp"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/from_receive"

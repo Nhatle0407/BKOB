@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F8F8F8"
+    android:layout_height="match_parent"
+    tools:context=".views.DetailSaleFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/btn_back_detail"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#f8f8f8"
+        android:src="@drawable/ic_akar_icons_arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/detail"
+            style="@style/Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/detail"
+            android:textColor="@color/header" />
+
+    <ImageButton
+        android:id="@+id/btn_edit_dts"
+        android:layout_alignParentEnd="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="#f8f8f8"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_akar_icons_edit"
+        android:contentDescription="TODO" />
+
+        <ImageView
+            android:id="@+id/avatar_dts"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/giaitich" />
+
+        <TextView
+            android:id="@+id/price_dts"
+            style="@style/Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/avatar_dts"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="100.000đ"
+            android:textColor="@color/header" />
+
+        <TextView
+            android:id="@+id/name_item_dts"
+            style="@style/BoldBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price_dts"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Giải tích 2"
+            android:textColor="@color/header" />
+    <TextView
+        android:layout_below="@id/name_item_dts"
+        android:layout_marginStart="20dp"
+        android:id="@+id/soluong"
+        android:textColor="@color/body"
+        style="@style/Body"
+        android:text="Số lượng: "
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/quanty"
+        android:layout_below="@id/name_item_dts"
+        android:textColor="@color/body"
+        style="@style/Body"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/soluong"
+        android:text="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/body"
+        android:text="Mô tả: "
+        android:id="@+id/mota"
+        style="@style/Body"
+        android:layout_below="@+id/quanty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/des_dts"
+        style="@style/Description"
+        android:textColor="@color/body"
+        android:text="Với nhiều nội dung quan trọng như tích phân, lượng giác, đạo hàm, nội dung chi tiết rõ ràng giúp bạn qua môn dễ dàng hơn"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/mota"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_dts_save"
+            android:layout_marginStart="30dp"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button_main"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="Lưu thay đổi" />
+</RelativeLayout>
