@@ -18,10 +18,42 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/UIBKOB/app/src/main/res/layout/fragment_signup.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/UIBKOB/app/src/main/res/layout/toolbar.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/UIBKOB/app/src/main/res/menu/menu_navigation.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/background_receive.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/button_add.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/button_main.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/button_purchase.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/circle_splash.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/edittext.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_arrow_left.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_bell.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_camera.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_cart.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_chevron_down.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_circle_check_fill.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_copy.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_edit.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_facebook_fill.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_google_contained_fill.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_home.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_person.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_plus.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_search.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_trash_can.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1882051282051282" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/icon_menu.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/drawable/navigation_rounded.xml" value="0.1882051282051282" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/activity_authentication.xml" value="0.12817028985507245" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_.xml" value="0.1" />
-        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_detail.xml" value="0.11639492753623189" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_login2.xml" value="0.11639492753623189" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_order_r.xml" value="0.22" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_receive.xml" value="0.25" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_search.xml" value="0.5" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/fragment_signup.xml" value="0.1" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_receive.xml" value="0.5" />
+        <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_search.xml" value="0.5" />
       </map>
     </option>
   </component>

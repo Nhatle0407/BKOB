@@ -67,4 +67,8 @@
         <item name="android:textSize">14dp</item>
         <item name="android:textColor">@color/body</item>
     </style>
+    <style name="Widget.Button" parent="android:Widget">
+        <item name="android:background">@drawable/button_add</item>
+    </style>
+
 </resources>

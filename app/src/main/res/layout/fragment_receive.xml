@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#f8f8f8"
+    android:layout_height="match_parent"
+    tools:context=".views.ReceiveFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:id="@+id/btn_back_receive"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#f8f8f8"
+        android:src="@drawable/ic_akar_icons_arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/receive"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Đơn hàng đã nhận"
+        android:textColor="@color/header" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_receive"
+        tools:listitem="@layout/item_receive"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/receive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

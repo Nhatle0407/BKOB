@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    tools:context=".views.OrderRFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:id="@+id/btn_back_order"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#f8f8f8"
+        android:src="@drawable/ic_akar_icons_arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO" />
+    <TextView
+
+        android:id="@+id/infor_order"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Thông tin đơn hàng"
+        android:textColor="@color/header" />
+
+    <TextView
+        android:textColor="@color/body"
+        android:id="@+id/name_infor_order"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infor_order"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Giải tích 2" />
+    <RelativeLayout
+        android:id="@+id/name"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/name_infor_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            style="@style/BoldBody"
+            android:text="Tên:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/Body"
+            android:id="@+id/user_infor_receive"
+            android:layout_centerVertical="true"
+            android:text="Lê Nguyên Khang"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/address"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            style="@style/BoldBody"
+            android:text="Địa chỉ: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/Body"
+            android:id="@+id/user_address"
+            android:layout_centerVertical="true"
+            android:text="Ktx khu B"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            style="@style/BoldBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Số điện thoại:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/user_sdt"
+            style="@style/Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="0982068451" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/date_order"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/sdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            style="@style/BoldBody"
+            android:text="Ngày đặt:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/Body"
+            android:id="@+id/user_date_order"
+            android:layout_centerVertical="true"
+            android:text="03/10/2021"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/money"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/date_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/body"
+            style="@style/Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Thành tiền: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sum_money"
+            style="@style/Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="20.000đ" />
+    </RelativeLayout>
+
+    <Button
+        android:background="@drawable/button_main"
+        android:id="@+id/confirm_receive"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/money"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="20dp"
+        android:text="Xác nhận đơn hàng" />
+
+    <Button
+        android:id="@+id/reject_receive"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirm_receive"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button_main"
+        android:text="Từ chối" />
+</RelativeLayout>
