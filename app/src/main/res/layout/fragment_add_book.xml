@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".views.AddBookFragment">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#f8f8f8"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_akar_icons_arrow_left" />
+
+    <TextView
+        android:id="@+id/tv_addBook"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Đăng bán"
+        android:textColor="@color/header" />
+
+    <TextView
+        android:id="@+id/tv_sellWhat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/BoldBody"
+        android:text="Bạn muốn bán gì?"
+        android:textColor="@color/header"
+        android:layout_below="@id/btn_back"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"/>
+
+    <ImageButton
+        android:id="@+id/btn_bookImage"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_akar_icons_camera"
+        android:background="@drawable/background_receive"
+        android:layout_below="@id/tv_sellWhat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/et_bookName"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_bookImage"
+        android:layout_marginTop="20dp"
+        android:hint="Tên sản phẩm"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        style="@style/Body"
+        android:background="@drawable/edittext"/>
+
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_bookName"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:hint="Giá"
+        android:inputType="number"
+        android:paddingHorizontal="10dp"
+        style="@style/Body"
+        android:background="@drawable/edittext"/>
+
+    <EditText
+        android:id="@+id/et_quantity"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_bookName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Số lượng"
+        android:inputType="number"
+        android:paddingHorizontal="10dp"
+        style="@style/Body"
+        android:background="@drawable/edittext"/>
+
+    <RelativeLayout
+        android:id="@+id/container_dropdown"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_price"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_akar_icons_chevron_down"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/container_dropdown"
+        android:layout_marginTop="10dp"
+        android:hint="Mô tả"
+        android:inputType="number"
+        android:paddingHorizontal="10dp"
+        style="@style/Body"
+        android:background="@drawable/edittext"/>
+
+    <Button
+        android:id="@+id/btn_addBook"
+        style="@style/Button"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_description"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:text="Đăng bán"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

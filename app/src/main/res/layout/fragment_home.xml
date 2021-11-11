@@ -3,20 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
-    tools:context=".views.SearchFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <ImageButton
-        android:id="@+id/btn_back_search"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:background="#f8f8f8"
-        android:src="@drawable/ic_akar_icons_arrow_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="TODO" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.HomeFragment">
 
     <TextView
         android:id="@+id/search"
@@ -78,16 +67,57 @@
             android:src="@drawable/ic_icon_filter" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tv_categoty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Header"
+        android:text="Danh mục"
+        android:layout_below="@id/container_search"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcl_search"
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_categoty"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_category" />
+
+    <TextView
+        android:id="@+id/tv_allBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Header"
+        android:text="Tất cả sách"
+        android:layout_below="@id/rv_category"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_seeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Caption"
+        android:text="Xem tất cả"
+        android:layout_below="@id/rv_category"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentEnd="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_allBook"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@id/container_search"
+        android:layout_below="@id/tv_allBook"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_search" />
-
 
 </RelativeLayout>

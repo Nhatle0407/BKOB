@@ -111,16 +111,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/purchase"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/button_main"
-            android:text="Mua ngay" />
+    <Button
+        android:id="@+id/purchase"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_secondary"
+        android:text="Mua ngay" />
 
         <Button
             style="@style/Button"

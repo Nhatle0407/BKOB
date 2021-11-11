@@ -20,6 +20,12 @@
         <item name="android:textColor">@color/main</item>
     </style>
 
+    <style name="AppNameSmall">
+        <item name="android:fontFamily">@font/sen_extrabold</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/main</item>
+    </style>
+
     <style name="Caption">
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:textSize">14sp</item>
