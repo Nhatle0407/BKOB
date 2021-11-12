@@ -111,10 +111,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/purchase"
-        style="@style/Button"
-        android:layout_width="wrap_content"
+        style="@style/ButtonSecond"
+        android:padding="10dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
@@ -123,6 +124,7 @@
         android:text="Mua ngay" />
 
         <Button
+            android:id="@+id/btn_addToCart"
             style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

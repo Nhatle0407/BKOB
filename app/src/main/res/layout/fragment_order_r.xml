@@ -176,15 +176,15 @@
         android:layout_marginRight="20dp"
         android:text="Xác nhận đơn hàng" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_reject_receive"
-        style="@style/Button"
+        style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_confirm_receive"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/button_main"
+        android:background="@drawable/button_secondary"
         android:text="Từ chối" />
 </RelativeLayout>
