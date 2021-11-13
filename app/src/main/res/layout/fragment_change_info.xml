@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.ChangeInfoFragment">
+
+    <ImageButton
+        android:id="@+id/btn_back_change_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#f8f8f8"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_akar_icons_arrow_left" />
+
+    <TextView
+        android:id="@+id/change_info_title"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Thay đổi thông tin"
+        android:textColor="@color/header" />
+
+    <ImageButton
+        android:id="@+id/btn_change_user_image"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_akar_icons_camera"
+        android:background="@drawable/background_receive"
+        android:layout_below="@id/change_info_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_change_user_image"
+        android:layout_marginTop="30dp"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp">
+
+        <TextView
+            android:id="@+id/user_email"
+            style="@style/BoldBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="khang@gmail.com"
+            android:textColor="@color/body" />
+
+        <EditText
+            android:id="@+id/edit_name"
+            style="@style/Body"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/user_email"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext"
+            android:hint="Thay đổi tên"
+            android:paddingHorizontal="10dp"
+            android:text="Lê Nguyên Khang" />
+
+        <EditText
+            android:id="@+id/edit_address"
+            style="@style/Body"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/edit_name"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext"
+            android:hint="Thay đổi địa chỉ"
+            android:paddingHorizontal="10dp"
+            android:text="KTX khu B ĐHQG" />
+
+        <EditText
+            android:id="@+id/edit_phone_number"
+            style="@style/Body"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/edit_address"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext"
+            android:hint="Thay đổi số điện thoại"
+            android:inputType="phone"
+            android:paddingHorizontal="10dp"
+            android:text="0123456789" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
