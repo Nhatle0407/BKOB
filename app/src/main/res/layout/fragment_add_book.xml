@@ -88,38 +88,24 @@
         style="@style/Body"
         android:background="@drawable/edittext"/>
 
-    <RelativeLayout
-        android:id="@+id/container_dropdown"
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="362dp"
         android:layout_height="50dp"
         android:layout_below="@id/et_price"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true">
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/edittext" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="5dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_akar_icons_chevron_down"/>
-    </RelativeLayout>
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/spinner"/>
 
     <EditText
         android:id="@+id/et_description"
         android:layout_width="362dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/container_dropdown"
+        android:layout_below="@id/spinner"
         android:layout_marginTop="10dp"
         android:hint="Mô tả"
-        android:inputType="number"
+        android:inputType="text"
         android:paddingHorizontal="10dp"
         style="@style/Body"
         android:background="@drawable/edittext"/>
@@ -130,7 +116,7 @@
         android:layout_width="362dp"
         android:layout_height="50dp"
         android:layout_below="@id/et_description"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_main"
         android:text="Đăng bán"
