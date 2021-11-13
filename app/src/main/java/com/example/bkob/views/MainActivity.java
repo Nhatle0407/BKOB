@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new NotificationFragment();
                         break;
                     case R.id.account:
-                        fragment = null;
+                        fragment = new AccountFragment();
                         break;
                 }
                 if(fragment != null){

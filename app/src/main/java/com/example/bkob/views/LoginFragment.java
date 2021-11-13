@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,11 +14,15 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentLoginBinding;
+import com.example.bkob.models.LoginModel;
+import com.example.bkob.presenters.LoginPresenter;
+import com.example.bkob.views.interfaces.LoginInterface;
 
 
-public class LoginFragment extends Fragment {
-    FragmentLoginBinding binding;
+public class LoginFragment extends Fragment implements LoginInterface {
+    private FragmentLoginBinding binding;
 
+    private LoginPresenter loginPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,12 +36,12 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        loginPresenter = new LoginPresenter(this);
+
         binding.tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
-                getActivity().finish();
+                goToMainActivity();
             }
         });
 
@@ -53,6 +58,27 @@ public class LoginFragment extends Fragment {
                 replaceFragment(new SignupFragment());
             }
         });
+
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickLogin();
+            }
+        });
+    }
+
+    private void goToMainActivity() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
+    private void clickLogin() {
+        String email = binding.etEmail.getText().toString().trim();
+        String password = binding.etPassword.getText().toString().trim();
+
+        LoginModel loginModel = new LoginModel(email, password);
+        loginPresenter.login(loginModel);
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -61,5 +87,16 @@ public class LoginFragment extends Fragment {
                 .replace(R.id.authFragments, fragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    @Override
+    public void loginSuccess() {
+        Toast.makeText(getContext(), "Đăng nhập thành công!" , Toast.LENGTH_SHORT).show();
+        goToMainActivity();
+    }
+
+    @Override
+    public void loginError(Exception e) {
+        Toast.makeText(getContext(), "Đăng nhập thất bại: " + e.getMessage() , Toast.LENGTH_SHORT).show();
     }
 }
