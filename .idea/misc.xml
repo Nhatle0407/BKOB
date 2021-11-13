@@ -11,11 +11,10 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_camera.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_chevron_down.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_icon_filter.xml" value="0.221875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/spinner.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/activity_authentication.xml" value="0.11499493414387031" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/activity_main.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/activity_splash.xml" value="0.11499493414387031" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_add_book.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_add_book.xml" value="0.176" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_buy_history.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_cart.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_detail.xml" value="0.264" />
@@ -23,7 +22,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_login.xml" value="0.129981884057971" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_notification.xml" value="0.264" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_order.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_order.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_order_r.xml" value="0.4" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_receive.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_reset_password.xml" value="0.264" />
@@ -37,11 +36,6 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_receive.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_search.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_selling.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_spinner_category.xml" value="0.2" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_spinner_selected.xml" value="0.264" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/spinner_item.xml" value="0.6" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/spinner_selected.xml" value="0.536" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/menu/menu_navigation.xml" value="0.19375" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/UIBKOB/app/src/main/res/drawable/background.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/UIBKOB/app/src/main/res/drawable/button_large_main.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/UIBKOB/app/src/main/res/drawable/circle_splash.xml" value="0.2526041666666667" />
@@ -117,6 +111,9 @@
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_login.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_order_r.xml" value="0.36666666666666664" />
+        <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_cart.xml" value="0.36666666666666664" />
+        <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/android studio/BKOB/app/src/main/res/layout/spinner_item.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
