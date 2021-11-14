@@ -16,7 +16,24 @@ public class LoginPresenter {
         this.loginInterface = loginInterface;
     }
 
+    public boolean validation(LoginModel loginModel){
+        if(!loginModel.isValidEmail()){
+            loginInterface.emailInvalid();
+            return false;
+        }
+        else if(!loginModel.isValidPassword()){
+            loginInterface.passwordInvalid();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     public void login(LoginModel loginModel){
+        if(!validation(loginModel)){
+            return;
+        }
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signInWithEmailAndPassword(loginModel.getEmail(), loginModel.getPassword()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override

@@ -11,13 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BKOB">
         <activity
-            android:name="com.example.bkob.views.MainActivity"
+            android:name="com.example.bkob.views.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.bkob.views.AuthenticationActivity"
+            android:name="com.example.bkob.views.activity.AuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.bkob.views.SplashActivity"
+            android:name="com.example.bkob.views.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

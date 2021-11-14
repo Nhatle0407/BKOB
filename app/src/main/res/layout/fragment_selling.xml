@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".views.SellingFragment">
+    tools:context=".views.fragments.SellingFragment">
     <ImageButton
         android:id="@+id/btn_back_selling"
         android:layout_marginTop="20dp"

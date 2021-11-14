@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".views.AuthenticationActivity">
+    tools:context=".views.activity.AuthenticationActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/authFragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.example.bkob.views.LoginFragment"/>
+        android:name="com.example.bkob.views.fragments.LoginFragment"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

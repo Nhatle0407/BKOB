@@ -1,4 +1,4 @@
-package com.example.bkob.views;
+package com.example.bkob.views.fragments;
 
 import android.os.Bundle;
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.AccountFragment">
+    tools:context=".views.fragments.AccountFragment">
 
     <ImageButton
         android:id="@+id/btn_back_account"
@@ -157,7 +157,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:background="@drawable/button_main"
-        android:text="Đăng bán"
+        android:text="Đăng xuất"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

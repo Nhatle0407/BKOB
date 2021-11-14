@@ -1,4 +1,4 @@
-package com.example.bkob.views;
+package com.example.bkob.views.activity;
 
 
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.bkob.R;
 import com.example.bkob.databinding.ActivityMainBinding;
+import com.example.bkob.views.fragments.AccountFragment;
+import com.example.bkob.views.fragments.AddBookFragment;
+import com.example.bkob.views.fragments.HomeFragment;
+import com.example.bkob.views.fragments.NotificationFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity extends AppCompatActivity {
