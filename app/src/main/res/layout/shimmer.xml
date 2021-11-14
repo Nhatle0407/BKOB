@@ -14,7 +14,7 @@
         android:layout_marginTop="10dp"
         android:contentDescription="TODO"
         android:scaleType="fitXY"
-        android:src="@drawable/giaitich" />
+        android:background="@color/gray"/>
     <TextView
         android:id="@+id/tv_categoryName"
         android:width="110dp"
@@ -23,7 +23,7 @@
         style="@style/Caption"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/img_category"
-        android:text="Sách chuyên ngành"
+        android:background="@color/gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

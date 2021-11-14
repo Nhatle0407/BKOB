@@ -1,4 +1,4 @@
-package com.example.bkob.views;
+package com.example.bkob.views.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,29 +13,36 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.bkob.R;
-import com.example.bkob.databinding.FragmentSignupBinding;
-import com.example.bkob.models.SignUpModel;
-import com.example.bkob.presenters.SignUpPresenter;
-import com.example.bkob.views.interfaces.SignUpInterface;
+import com.example.bkob.databinding.FragmentLoginBinding;
+import com.example.bkob.models.LoginModel;
+import com.example.bkob.presenters.LoginPresenter;
+import com.example.bkob.views.activity.MainActivity;
+import com.example.bkob.views.customView.CustomProgressDialog;
+import com.example.bkob.views.interfaces.LoginInterface;
 
-public class SignupFragment extends Fragment implements SignUpInterface {
-    private FragmentSignupBinding binding;
-    private SignUpPresenter presenter;
+
+public class LoginFragment extends Fragment implements LoginInterface {
+    private FragmentLoginBinding binding;
+
+    private LoginPresenter loginPresenter;
+
+    private CustomProgressDialog dialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentSignupBinding.inflate(getLayoutInflater());
+        // Inflate the layout for this fragment
+        binding = FragmentLoginBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
-
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        presenter = new SignUpPresenter(this);
+        dialog = new CustomProgressDialog(getContext());
+
+        loginPresenter = new LoginPresenter(this);
 
         binding.tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,35 +51,41 @@ public class SignupFragment extends Fragment implements SignUpInterface {
             }
         });
 
-        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+        binding.tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();
+                replaceFragment(new ResetPasswordFragment());
             }
         });
 
-        binding.tvAskLogin.setOnClickListener(new View.OnClickListener() {
+        binding.tvAskSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new LoginFragment());
+                replaceFragment(new SignupFragment());
             }
         });
 
-        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickSignUp();
+                clickLogin();
             }
         });
     }
 
-    private void clickSignUp() {
+    private void goToMainActivity() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
+    private void clickLogin() {
+        dialog.show();
         String email = binding.etEmail.getText().toString().trim();
         String password = binding.etPassword.getText().toString().trim();
-        String rePassword = binding.etRePassword.getText().toString().trim();
 
-        SignUpModel signUpModel = new SignUpModel(email, password, rePassword);
-        presenter.signUp(signUpModel);
+        LoginModel loginModel = new LoginModel(email, password);
+        loginPresenter.login(loginModel);
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -83,36 +96,28 @@ public class SignupFragment extends Fragment implements SignUpInterface {
                 .commit();
     }
 
-    private void goToMainActivity(){
-        Intent intent = new Intent(getActivity(), MainActivity.class);
-        startActivity(intent);
-        getActivity().finish();
-    }
-
-
     @Override
     public void emailInvalid() {
+        dialog.hide();
         binding.etEmail.setError("Email không hợp lệ!");
     }
 
     @Override
     public void passwordInvalid() {
+        dialog.hide();
         binding.etPassword.setError("Password phải nhiều hơn 6 kí tự!");
     }
 
     @Override
-    public void rePasswordInvalid() {
-        binding.etRePassword.setError("Mật khẩu không khớp!");
-    }
-
-    @Override
-    public void signUpSuccess() {
-        Toast.makeText(getContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+    public void loginSuccess() {
+        dialog.hide();
+        Toast.makeText(getContext(), "Đăng nhập thành công!" , Toast.LENGTH_SHORT).show();
         goToMainActivity();
     }
 
     @Override
-    public void signUpError(Exception e) {
-        Toast.makeText(getContext(), "Đăng ký thất bại: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+    public void loginError(Exception e) {
+        dialog.hide();
+        Toast.makeText(getContext(), "Đăng nhập thất bại: " + e.getMessage() , Toast.LENGTH_SHORT).show();
     }
 }

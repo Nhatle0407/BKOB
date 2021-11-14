@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f8f8f8"
-    tools:context=".views.OrderRFragment">
+    tools:context=".views.fragments.OrderRFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageButton

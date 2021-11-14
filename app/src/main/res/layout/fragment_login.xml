@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".views.LoginFragment">
+    tools:context=".views.fragments.LoginFragment">
 
     <TextView
         android:id="@+id/tv_skip"
@@ -44,8 +44,9 @@
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tv_login"
         android:layout_marginTop="15dp"
@@ -57,8 +58,9 @@
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/et_email"
         android:layout_marginTop="15dp"
@@ -83,8 +85,9 @@
     <Button
         android:id="@+id/btn_login"
         style="@style/Button"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_below="@id/tv_forgotPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"

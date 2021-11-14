@@ -1,4 +1,4 @@
-package com.example.bkob.views;
+package com.example.bkob.views.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

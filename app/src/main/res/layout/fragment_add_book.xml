@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".views.AddBookFragment">
+    tools:context=".views.fragments.AddBookFragment">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -49,11 +49,12 @@
 
     <EditText
         android:id="@+id/et_bookName"
-        android:layout_width="362dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btn_bookImage"
         android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="25dp"
         android:hint="Tên sản phẩm"
         android:inputType="text"
         android:paddingHorizontal="10dp"
@@ -90,20 +91,22 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="362dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="25dp"
         android:layout_height="50dp"
         android:layout_below="@id/et_price"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/spinner"/>
+        android:background="@drawable/edittext"/>
 
     <EditText
         android:id="@+id/et_description"
-        android:layout_width="362dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/spinner"
         android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="25dp"
         android:hint="Mô tả"
         android:inputType="text"
         android:paddingHorizontal="10dp"
@@ -113,10 +116,11 @@
     <Button
         android:id="@+id/btn_addBook"
         style="@style/Button"
-        android:layout_width="362dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/et_description"
         android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_main"
         android:text="Đăng bán"

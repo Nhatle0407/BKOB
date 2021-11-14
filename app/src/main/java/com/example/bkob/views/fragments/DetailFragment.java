@@ -1,4 +1,4 @@
-package com.example.bkob.views;
+package com.example.bkob.views.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.bkob.R;
 
-public class AccountFragment extends Fragment {
+
+public class DetailFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,6 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 }
