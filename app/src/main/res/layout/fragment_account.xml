@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.AccountFragment">
+    tools:context=".views.fragments.AccountFragment">
 
     <ImageButton
         android:id="@+id/btn_back_account"
@@ -32,6 +32,7 @@
         android:layout_below="@id/account_title"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
+        android:padding="30dp"
         android:background="@drawable/background_receive"
         android:src="@drawable/ic_akar_icons_person" />
 
@@ -83,7 +84,7 @@
         android:layout_marginLeft="30px"
         android:layout_marginTop="30dp"
         android:layout_toRightOf="@id/user_info"
-        android:background="@drawable/background_receive"
+        android:background="@color/background"
         android:src="@drawable/ic_akar_icons_edit" />
 
 
@@ -105,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/btn_your_products"
         android:background="@drawable/button_secondary"
@@ -117,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/btn_order_receive"
         android:background="@drawable/button_secondary"
@@ -129,7 +130,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/btn_shopping_history"
         android:background="@drawable/button_secondary"
@@ -141,7 +142,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/btn_support"
         android:background="@drawable/button_secondary"
@@ -151,13 +152,14 @@
     <Button
         android:id="@+id/btn_logOut"
         style="@style/Button"
-        android:layout_width="362dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/btn_change_password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_main"
-        android:text="Đăng bán"
+        android:text="Đăng xuất"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 
