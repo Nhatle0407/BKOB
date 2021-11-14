@@ -90,14 +90,38 @@
         tools:itemCount="5"
         tools:listitem="@layout/item_category" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_categoty"
+        android:layout_marginTop="10dp"
+
+        android:paddingHorizontal="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/shimmer"/>
+            <include layout="@layout/shimmer"/>
+            <include layout="@layout/shimmer"/>
+            <include layout="@layout/shimmer"/>
+            <include layout="@layout/shimmer"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <TextView
         android:id="@+id/tv_allBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Header"
         android:text="Tất cả sách"
-        android:layout_below="@id/rv_category"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/tv_categoty"
+        android:layout_marginTop="180dp"
         android:layout_marginStart="20dp"/>
 
     <TextView
@@ -106,8 +130,8 @@
         android:layout_height="wrap_content"
         style="@style/Caption"
         android:text="Xem tất cả"
-        android:layout_below="@id/rv_category"
-        android:layout_marginTop="25dp"
+        android:layout_below="@id/tv_categoty"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="20dp"
         android:layout_alignParentEnd="true"/>
 
@@ -119,6 +143,6 @@
         android:layout_centerHorizontal="true"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/item_search" />
+        tools:listitem="@layout/item_search"/>
 
 </RelativeLayout>

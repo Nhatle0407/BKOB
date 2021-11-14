@@ -1,49 +1,69 @@
 package com.example.bkob.views.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
-import com.example.bkob.models.Category;
+import com.example.bkob.models.CategoryModel;
+import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.util.ArrayList;
+
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.HolderCategory> {
+    private Context context;
+    public ArrayList<CategoryModel> categoryList;
 
 
-public class CategoryAdapter extends ArrayAdapter<Category> {
-
-    public CategoryAdapter(@NonNull Context context, int resource, @NonNull List<Category> objects) {
-        super(context, resource, objects);
+    public CategoryAdapter(Context context, ArrayList<CategoryModel> categoryList){
+        this.context = context;
+        this.categoryList = categoryList;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.spinner_selected, parent, false);
-        TextView tvSelected = convertView.findViewById(R.id.tv_spinner_selected);
-
-        Category category = this.getItem(position);
-        if(category != null){
-            tvSelected.setText(category.getTitle());
-        }
-        return convertView;
+    public HolderCategory onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_category, parent, false);
+        return new HolderCategory(view);
     }
 
     @Override
-    public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.spinner_item, parent, false);
-        TextView tvSpinner = convertView.findViewById(R.id.spinner_tv);
+    public void onBindViewHolder(@NonNull HolderCategory holder, int position) {
+        CategoryModel categoryModel = categoryList.get(position);
 
-        Category category = this.getItem(position);
-        if(category != null){
-            tvSpinner.setText(category.getTitle());
+        String name = categoryModel.getName();
+        String imageUrl = categoryModel.getImageUrl();
+
+        holder.categoryName.setText(name);
+        try{
+            Picasso.get().load(imageUrl).into(holder.categoryImage);
         }
-        return convertView;
+        catch (Exception e){
+            Log.d("Category", "Fail to load image:"+e.getMessage());
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return categoryList.size();
+    }
+
+    class HolderCategory extends RecyclerView.ViewHolder {
+        private ImageView categoryImage;
+        private TextView categoryName;
+
+        public HolderCategory(@NonNull View itemView) {
+            super(itemView);
+
+            categoryImage = itemView.findViewById(R.id.img_category);
+            categoryName = itemView.findViewById(R.id.tv_categoryName);
+        }
     }
 }
