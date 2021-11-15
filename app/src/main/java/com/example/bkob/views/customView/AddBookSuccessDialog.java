@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 
 import com.example.bkob.R;
 
-public class CustomProgressDialog extends Dialog {
-    public CustomProgressDialog(@NonNull Context context) {
+public class AddBookSuccessDialog extends Dialog {
+    public AddBookSuccessDialog(@NonNull Context context) {
         super(context);
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -22,9 +22,9 @@ public class CustomProgressDialog extends Dialog {
         params.gravity = Gravity.CENTER_HORIZONTAL;
         getWindow().setAttributes(params);
         setTitle(null);
-        setCancelable(false);
+        setCancelable(true);
         setOnCancelListener(null);
-        View view = LayoutInflater.from(context).inflate(R.layout.loading_dialog, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.addbooksuccess_dialog, null);
         setContentView(view);
     }
 }

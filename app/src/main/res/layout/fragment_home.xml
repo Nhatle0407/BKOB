@@ -20,7 +20,7 @@
         android:shadowRadius="1"
         android:text="@string/app_name" />
     <ImageButton
-        android:id="@+id/btn_cart_search"
+        android:id="@+id/btn_cart_home"
         android:layout_alignParentEnd="true"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -104,11 +104,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <include layout="@layout/shimmer"/>
-            <include layout="@layout/shimmer"/>
-            <include layout="@layout/shimmer"/>
-            <include layout="@layout/shimmer"/>
-            <include layout="@layout/shimmer"/>
+            <include layout="@layout/shimmer_category"/>
+            <include layout="@layout/shimmer_category"/>
+            <include layout="@layout/shimmer_category"/>
+            <include layout="@layout/shimmer_category"/>
+            <include layout="@layout/shimmer_category"/>
 
         </LinearLayout>
 

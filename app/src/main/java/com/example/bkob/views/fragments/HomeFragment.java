@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentHomeBinding;
 import com.example.bkob.presenters.HomePresenter;
 import com.example.bkob.views.adapters.CategoryAdapter;
@@ -25,6 +27,8 @@ public class HomeFragment extends Fragment implements HomeInterface {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
+
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
@@ -38,6 +42,20 @@ public class HomeFragment extends Fragment implements HomeInterface {
         shimmerCategory = binding.shimmerCategory;
 
         loadCategory();
+        binding.btnCartHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new CartFragment());
+            }
+        });
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainFragments, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     private void loadCategory() {
