@@ -6,11 +6,11 @@ import android.text.TextUtils;
 public class BookModel {
 
 
-    private String name, description, category, price, quantity, uid, imageUrl;
+    private String name, description, category, price, quantity, userid, imageUrl;
     private Uri imageUri;
 
     public String getUid() {
-        return uid;
+        return userid;
     }
 
     public String getImageUrl() {
@@ -51,7 +51,7 @@ public class BookModel {
     }
 
     public void setUid(String uid) {
-        this.uid = uid;
+        this.userid = uid;
     }
 
     public void setImageUrl(String imageUrl) {
@@ -68,7 +68,7 @@ public class BookModel {
         this.category = category;
         this.price = price;
         this.quantity = quantity;
-        this.uid = uid;
+        this.userid = uid;
         this.imageUrl = imageUrl;
     }
     public boolean isValidName(){
