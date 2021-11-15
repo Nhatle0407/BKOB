@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment implements HomeInterface {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
+
 
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         return binding.getRoot();
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment implements HomeInterface {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
         homePresenter = new HomePresenter(this, getContext());
         categoryRv = binding.rvCategory;
         shimmerCategory = binding.shimmerCategory;
@@ -46,8 +46,10 @@ public class HomeFragment extends Fragment implements HomeInterface {
             @Override
             public void onClick(View v) {
                 replaceFragment(new CartFragment());
+                getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
             }
         });
+
     }
 
     private void replaceFragment(Fragment fragment) {

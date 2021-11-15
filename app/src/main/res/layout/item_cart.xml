@@ -35,14 +35,15 @@
             android:id="@+id/container_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
-                android:layout_centerVertical="true"
-                android:id="@+id/from_receive"
+
+                style="@style/Body"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                style="@style/Body"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:text="Số lượng:"
@@ -61,14 +62,17 @@
             <TextView
                 android:id="@+id/cart_quanty"
                 style="@style/BoldBody"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="5dp"
                 android:layout_toStartOf="@id/cart_add"
-                android:text=" 1 " />
+                android:background="@drawable/custom_text"
+                android:gravity="center"
+                android:text="1" />
 
             <TextView
+                android:background="@drawable/custom_text"
                 android:id="@+id/cart_sub"
                 style="@style/Header"
                 android:layout_width="wrap_content"
@@ -82,26 +86,27 @@
 
 
         <TextView
-            android:textSize="16sp"
-            android:id="@+id/price_receive"
+            android:id="@+id/price_cart"
             style="@style/Price"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/container_cart"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            android:text="20.0000đ" />
+            android:text="20.0000đ"
+            android:textSize="16sp" />
     </RelativeLayout>
+
     <ImageButton
         android:id="@+id/remove_cart"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
         android:background="@color/white"
-        android:src="@drawable/ic_akar_icons_trash_can"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_akar_icons_trash_can" />
 
 </RelativeLayout>
