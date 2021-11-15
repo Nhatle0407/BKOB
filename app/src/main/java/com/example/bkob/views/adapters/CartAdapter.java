@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
+import com.example.bkob.views.interfaces.CartInterface;
 import com.squareup.picasso.Picasso;
 
 import java.time.temporal.Temporal;
@@ -20,6 +21,9 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
     private List<BookModel> bookModels;
+
+
+
 
     public CartAdapter(List<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -49,6 +53,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             @Override
             public void onClick(View view) {
                 bookModels.remove(holder.getAdapterPosition());
+                notifyDataSetChanged();
+
             }
         });
         holder.add.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +92,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             sub = itemView.findViewById(R.id.cart_sub);
             add = itemView.findViewById(R.id.cart_add);
             quantity = itemView.findViewById(R.id.cart_quanty);
+            delete = itemView.findViewById(R.id.remove_cart);
         }
     }
 }

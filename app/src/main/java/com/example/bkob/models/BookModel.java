@@ -21,14 +21,7 @@ public class BookModel {
         return imageUri;
     }
 
-    public BookModel(String name, String description, String category, String price, String quantity, Uri imageUri) {
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.quantity = quantity;
-        this.imageUri = imageUri;
-    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -70,6 +63,14 @@ public class BookModel {
         this.quantity = quantity;
         this.userid = uid;
         this.imageUrl = imageUrl;
+    }
+    public BookModel(String name, String description, String category, String price, String quantity, Uri imageUri) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.quantity = quantity;
+        this.imageUri = imageUri;
     }
     public boolean isValidName(){
         return !TextUtils.isEmpty(name);

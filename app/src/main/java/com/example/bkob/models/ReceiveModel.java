@@ -5,12 +5,12 @@ import java.util.Date;
 public class ReceiveModel {
     private BookModel item;
     private String date;
-    private UserModel userModel;
+    private String userid;
 
-    public ReceiveModel(BookModel item, String date, UserModel userModel) {
+    public ReceiveModel(BookModel item, String date, String userid) {
         this.item = item;
         this.date = date;
-        this.userModel = userModel;
+        this.userid = userid;
     }
 
     public BookModel getItem() {
@@ -29,11 +29,11 @@ public class ReceiveModel {
         this.date = date;
     }
 
-    public UserModel getUserModel() {
-        return userModel;
+    public String getUserModel() {
+        return userid;
     }
 
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
+    public void setUserModel(String userid) {
+        this.userid = userid;
     }
 }

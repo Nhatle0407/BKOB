@@ -25,7 +25,7 @@ public class ReceiveAdapter extends  RecyclerView.Adapter<ReceiveAdapter.Receive
     @Override
     public ReceiveHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_cart, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_receive, parent, false);
         return new ReceiveAdapter.ReceiveHolder(view);
     }
 
@@ -33,7 +33,6 @@ public class ReceiveAdapter extends  RecyclerView.Adapter<ReceiveAdapter.Receive
     public void onBindViewHolder(@NonNull ReceiveHolder holder, int position) {
         ReceiveModel item = receiveModelList.get(position);
         holder.name.setText(item.getItem().getName());
-        holder.from.setText(item.getUserModel().getName());
         holder.price.setText(item.getItem().getPrice());
         holder.date.setText(item.getDate());
     }
@@ -49,7 +48,7 @@ public class ReceiveAdapter extends  RecyclerView.Adapter<ReceiveAdapter.Receive
         public ReceiveHolder(@NonNull View itemView) {
             super(itemView);
             avatar = itemView.findViewById(R.id.avatar_receive);
-            name = itemView.findViewById(R.id.name_receive);
+            name = itemView.findViewById(R.id.name_receive1);
             price = itemView.findViewById(R.id.price_receive);
             detail = itemView.findViewById(R.id.detail_receive);
             from = itemView.findViewById(R.id.from_receive);
