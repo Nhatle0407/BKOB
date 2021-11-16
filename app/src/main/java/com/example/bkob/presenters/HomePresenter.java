@@ -44,18 +44,18 @@ public class HomePresenter {
                 if(snapshot.hasChildren()){
                     for (DataSnapshot ds : snapshot.getChildren()){
                         BookModel bookModel = ds.getValue(BookModel.class);
-                        Log.d("ALLBOOK", bookModel.getName());
                         bookList.add(bookModel);
                     }
                     bookAdapter = new BookAdapter(context, bookList);
-                    Log.d("ALLBOOK", "load ok");
                     homeInterface.showAllBook(bookAdapter);
+                }
+                else {
+                    homeInterface.emptyList();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }

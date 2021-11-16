@@ -4,14 +4,28 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 public class BookModel {
+    private String bookId, userId, name, description, category, price, quantity, imageUrl;
+    private Uri imageUri;
+
     public BookModel() {
     }
 
-    private String name, description, category, price, quantity, userid, imageUrl;
-    private Uri imageUri;
-
-    public String getUid() {
-        return userid;
+    public BookModel(String name, String description, String category, String price, String quantity, String userId, String imageUrl) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.quantity = quantity;
+        this.userId = userId;
+        this.imageUrl = imageUrl;
+    }
+    public BookModel(String name, String description, String category, String price, String quantity, Uri imageUri) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.quantity = quantity;
+        this.imageUri = imageUri;
     }
 
     public String getImageUrl() {
@@ -22,7 +36,33 @@ public class BookModel {
         return imageUri;
     }
 
+    public String getBookId() {
+        return bookId;
+    }
 
+    public String getUid() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -45,7 +85,7 @@ public class BookModel {
     }
 
     public void setUid(String uid) {
-        this.userid = uid;
+        this.userId = uid;
     }
 
     public void setImageUrl(String imageUrl) {
@@ -56,23 +96,7 @@ public class BookModel {
         this.imageUri = imageUri;
     }
 
-    public BookModel(String name, String description, String category, String price, String quantity, String uid, String imageUrl) {
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.quantity = quantity;
-        this.userid = uid;
-        this.imageUrl = imageUrl;
-    }
-    public BookModel(String name, String description, String category, String price, String quantity, Uri imageUri) {
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.quantity = quantity;
-        this.imageUri = imageUri;
-    }
+
     public boolean isValidName(){
         return !TextUtils.isEmpty(name);
     }
@@ -90,23 +114,5 @@ public class BookModel {
         return (imageUri!=null);
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public String getQuantity() {
-        return quantity;
-    }
 }

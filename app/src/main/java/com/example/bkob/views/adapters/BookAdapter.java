@@ -5,17 +5,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.models.CategoryModel;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
     private Context context;
@@ -52,6 +60,30 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         catch (Exception e){
             Log.d("ALLBOOK", "Fail to load image:"+e.getMessage());
         }
+
+        holder.btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addToCard(bookModel);
+            }
+        });
+    }
+
+    private void addToCard(BookModel bookModel) {
+        DatabaseReference cartRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("carts");
+        HashMap<String, String> hashMap = new HashMap<>();
+        String timeStamp = ""+System.currentTimeMillis();
+        String uid = FirebaseAuth.getInstance().getUid();
+        hashMap.put("bookId", bookModel.getBookId());
+        Log.d("ALLBOOK", "userID: "+ bookModel.getUid());
+        Log.d("ALLBOOK", "bookID: "+ bookModel.getBookId());
+        Log.d("ALLBOOK", "book name: "+ bookModel.getName());
+        cartRef.child(uid).child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(context, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -62,6 +94,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
     class BookHolder extends RecyclerView.ViewHolder{
         private ImageView bookImage;
         private TextView bookName, bookQuantity, bookPrice;
+        private ImageButton btnAdd;
 
         public BookHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +103,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
             bookName = itemView.findViewById(R.id.name_item_search);
             bookQuantity = itemView.findViewById(R.id.quanty_item_search);
             bookPrice = itemView.findViewById(R.id.price_item_search);
+            btnAdd = itemView.findViewById(R.id.btn_cart_item_search);
         }
     }
 }

@@ -142,6 +142,16 @@
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tv_empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Body"
+        android:text="Không có sách đang được bán"
+        android:layout_below="@id/container_allBook"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_allBook"
@@ -182,8 +192,6 @@
                 <include layout="@layout/shimmer_book"/>
             </LinearLayout>
         </RelativeLayout>
-
-
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 

@@ -135,7 +135,7 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
     @Override
     public void quatityInvalid() {
         dialog.hide();
-        binding.etPrice.setError("Số lượng phải lớn hơn 0!");
+        binding.etQuantity.setError("Số lượng phải lớn hơn 0!");
     }
 
     @Override

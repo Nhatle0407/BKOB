@@ -78,8 +78,8 @@ public class AddBookPresenter {
             return;
         }
 
-        String uid = FirebaseAuth.getInstance().getUid();
-        String bookId = uid + System.currentTimeMillis();
+        String userId = FirebaseAuth.getInstance().getUid();
+        String bookId = userId + System.currentTimeMillis();
 
         String filePath = "book_image/" + "" + bookId;
         StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePath);
@@ -91,8 +91,9 @@ public class AddBookPresenter {
                 Uri imageUrl = uriTask.getResult();
 
                 if(uriTask.isSuccessful()){
-                    HashMap<String, Object> hashMap = new HashMap<>();
-                    hashMap.put("userId", ""+uid);
+                    HashMap<String, String> hashMap = new HashMap<>();
+                    hashMap.put("bookId", ""+bookId);
+                    hashMap.put("userId", ""+ userId);
                     hashMap.put("name", ""+bookModel.getName());
                     hashMap.put("category", ""+bookModel.getCategory());
                     hashMap.put("price", ""+bookModel.getPrice());
@@ -110,6 +111,17 @@ public class AddBookPresenter {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             addBookInterface.addBookFail(e);
+                        }
+                    });
+
+                    DatabaseReference sellingRef = database.getReference("selling");
+                    String timeStamp = ""+System.currentTimeMillis();
+                    HashMap<String, String> selling = new HashMap<>();
+                    selling.put("bookId", bookId);
+                    sellingRef.child(userId).child(timeStamp).setValue(selling).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+
                         }
                     });
                 }

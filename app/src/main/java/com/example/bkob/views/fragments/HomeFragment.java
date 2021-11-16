@@ -86,4 +86,11 @@ public class HomeFragment extends Fragment implements HomeInterface {
         shimmerBook.setVisibility(View.GONE);
         bookRv.setAdapter(adapter);
     }
+
+    @Override
+    public void emptyList() {
+        shimmerBook.stopShimmer();
+        shimmerBook.setVisibility(View.GONE);
+        binding.tvEmptyList.setVisibility(View.VISIBLE);
+    }
 }
