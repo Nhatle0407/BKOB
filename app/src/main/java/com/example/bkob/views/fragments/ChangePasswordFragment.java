@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentChangePasswordBinding;
@@ -19,6 +20,7 @@ import com.example.bkob.databinding.FragmentReceiveBinding;
 public class ChangePasswordFragment extends Fragment {
 
     FragmentChangePasswordBinding binding;
+    String currentPassword, newPassword, confirmPassword;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +40,13 @@ public class ChangePasswordFragment extends Fragment {
             }
         });
 
+        binding.btnChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePassword();
+            }
+        });
+
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -45,5 +54,14 @@ public class ChangePasswordFragment extends Fragment {
         fragmentManager.beginTransaction()
                 .replace(R.id.mainFragments, fragment)
                 .commit();
+    }
+
+    private void changePassword(){
+        currentPassword = binding.inputCurrentPassword.getText().toString();
+        newPassword = binding.inputNewPassword.getText().toString();
+        confirmPassword = binding.inputConfirmPassword.getText().toString();
+        if (!newPassword.equals(confirmPassword)){
+            Toast.makeText(getContext(), "Confirm password does not match", Toast.LENGTH_SHORT).show();
+        }
     }
 }
