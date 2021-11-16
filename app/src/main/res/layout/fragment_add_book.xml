@@ -42,6 +42,8 @@
         android:layout_width="140dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_akar_icons_camera"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         android:background="@drawable/background_receive"
         android:layout_below="@id/tv_sellWhat"
         android:layout_centerHorizontal="true"

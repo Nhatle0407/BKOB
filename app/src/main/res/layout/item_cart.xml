@@ -20,7 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/avatar_cart">
+
         <TextView
+            android:textSize="16sp"
             android:id="@+id/name_cart"
             style="@style/Title"
             android:layout_width="100dp"

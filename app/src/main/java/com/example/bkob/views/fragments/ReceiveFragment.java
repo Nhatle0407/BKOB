@@ -12,11 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bkob.R;
-import com.example.bkob.databinding.FragmentOrderRBinding;
+import com.example.bkob.Singleton.DetailSaleSingleton;
 import com.example.bkob.databinding.FragmentReceiveBinding;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.models.ReceiveModel;
 import com.example.bkob.views.adapters.ReceiveAdapter;
+import com.example.bkob.views.interfaces.DetailSaleInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,13 @@ public class ReceiveFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         add();
-        ReceiveAdapter receiveAdapter = new ReceiveAdapter(receiveModelList);
+        ReceiveAdapter receiveAdapter = new ReceiveAdapter(receiveModelList, new DetailSaleInterface() {
+            @Override
+            public void detailSale(int i) {
+                DetailSaleSingleton.setReceiveModel(receiveModelList.get(i));
+                replaceFragment(new OrderRFragment());
+            }
+        });
         binding.rclReceive.setAdapter(receiveAdapter);
         binding.btnBackReceive.setOnClickListener(new View.OnClickListener() {
             @Override

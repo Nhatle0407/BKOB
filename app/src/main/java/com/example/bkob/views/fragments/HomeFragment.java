@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentHomeBinding;
 import com.example.bkob.presenters.HomePresenter;
+import com.example.bkob.views.adapters.BookAdapter;
 import com.example.bkob.views.adapters.CategoryAdapter;
 import com.example.bkob.views.interfaces.HomeInterface;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -21,8 +22,8 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 public class HomeFragment extends Fragment implements HomeInterface {
     private FragmentHomeBinding binding;
     private HomePresenter homePresenter;
-    private RecyclerView categoryRv;
-    private ShimmerFrameLayout shimmerCategory;
+    private RecyclerView categoryRv, bookRv;
+    private ShimmerFrameLayout shimmerCategory, shimmerBook;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,9 +40,13 @@ public class HomeFragment extends Fragment implements HomeInterface {
         getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
         homePresenter = new HomePresenter(this, getContext());
         categoryRv = binding.rvCategory;
+        bookRv = binding.rvAllBook;
         shimmerCategory = binding.shimmerCategory;
+        shimmerBook = binding.shimmerBook;
 
         loadCategory();
+        loadAllBook();
+
         binding.btnCartHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +65,10 @@ public class HomeFragment extends Fragment implements HomeInterface {
                 .commit();
     }
 
+    private void loadAllBook() {
+        homePresenter.loadAllBook();
+    }
+
     private void loadCategory() {
         homePresenter.loadCategory();
     }
@@ -69,5 +78,20 @@ public class HomeFragment extends Fragment implements HomeInterface {
         shimmerCategory.stopShimmer();
         shimmerCategory.setVisibility(View.GONE);
         categoryRv.setAdapter(adapter);
+    }
+
+    @Override
+    public void showAllBook(BookAdapter adapter) {
+        shimmerBook.stopShimmer();
+        shimmerBook.setVisibility(View.GONE);
+        binding.tvEmptyList.setVisibility(View.GONE);
+        bookRv.setAdapter(adapter);
+    }
+
+    @Override
+    public void emptyList() {
+        shimmerBook.stopShimmer();
+        shimmerBook.setVisibility(View.GONE);
+        binding.tvEmptyList.setVisibility(View.VISIBLE);
     }
 }

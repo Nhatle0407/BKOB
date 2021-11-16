@@ -9,7 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ImageButton
-        android:id="@+id/btn_back_detail"
+        android:id="@+id/btn_back_detail_sale"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:background="#f8f8f8"
@@ -19,7 +19,7 @@
         android:contentDescription="TODO" />
 
         <TextView
-            android:id="@+id/detail"
+            android:id="@+id/detail_sale"
             style="@style/Header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,17 +79,18 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <TextView
-        android:id="@+id/quanty"
-        android:layout_below="@id/name_item_dts"
-        android:textColor="@color/body"
+        android:id="@+id/quantity_sale"
         style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_item_dts"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_toEndOf="@id/soluong"
         android:text="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/body" />
     <TextView
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
@@ -97,7 +98,7 @@
         android:text="Mô tả: "
         android:id="@+id/mota"
         style="@style/Body"
-        android:layout_below="@+id/quanty"
+        android:layout_below="@+id/quantity_sale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView

@@ -73,11 +73,12 @@ public class SignupFragment extends Fragment implements SignUpInterface {
 
     private void clickSignUp() {
         dialog.show();
+        String name = binding.etName.getText().toString();
         String email = binding.etEmail.getText().toString().trim();
         String password = binding.etPassword.getText().toString().trim();
         String rePassword = binding.etRePassword.getText().toString().trim();
 
-        SignUpModel signUpModel = new SignUpModel(email, password, rePassword);
+        SignUpModel signUpModel = new SignUpModel(name, email, password, rePassword);
         presenter.signUp(signUpModel);
     }
 
@@ -95,6 +96,11 @@ public class SignupFragment extends Fragment implements SignUpInterface {
         getActivity().finish();
     }
 
+    @Override
+    public void nameInvalid() {
+        dialog.hide();
+        binding.etName.setError("Vui lòng nhập tên!");
+    }
 
     @Override
     public void emailInvalid() {

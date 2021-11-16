@@ -52,14 +52,15 @@
             android:text="Tên:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
         <TextView
-            style="@style/Body"
             android:id="@+id/user_infor_receive"
-            android:layout_centerVertical="true"
-            android:text="Lê Nguyên Khang"
-            android:layout_alignParentEnd="true"
+            style="@style/Body"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="Lê Nguyên Khang" />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/address_receive"
@@ -154,14 +155,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:textSize="20dp"
             android:id="@+id/sum_money_order_receive"
             style="@style/Body"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:text="20.000đ" />
+            android:text="20.000đ"
+            android:textSize="20dp" />
     </RelativeLayout>
 
     <Button
