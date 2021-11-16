@@ -73,6 +73,11 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/body</item>
     </style>
+    <style name="Category">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/body</item>
+    </style>
 
     <style name="Price">
         <item name="android:fontFamily">@font/montserrat_bold</item>

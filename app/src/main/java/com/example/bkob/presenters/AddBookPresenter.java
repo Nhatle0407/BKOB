@@ -98,7 +98,7 @@ public class AddBookPresenter {
                     hashMap.put("price", ""+bookModel.getPrice());
                     hashMap.put("quantity", ""+bookModel.getQuantity());
                     hashMap.put("description", ""+bookModel.getDescription());
-                    hashMap.put("image", ""+imageUrl);
+                    hashMap.put("imageUrl", ""+imageUrl);
 
                     DatabaseReference bookRef = database.getReference("books");
                     bookRef.child(bookId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {

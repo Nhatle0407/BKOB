@@ -4,7 +4,8 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 public class BookModel {
-
+    public BookModel() {
+    }
 
     private String name, description, category, price, quantity, userid, imageUrl;
     private Uri imageUri;
