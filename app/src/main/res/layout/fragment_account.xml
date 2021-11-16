@@ -105,10 +105,10 @@
         style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btn_your_products"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/btn_your_products"
         android:background="@drawable/button_secondary"
         android:text="Đơn hàng đã nhận" />
 
@@ -117,10 +117,10 @@
         style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btn_order_receive"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/btn_order_receive"
         android:background="@drawable/button_secondary"
         android:text="Lịch sử mua hàng" />
 
@@ -129,10 +129,10 @@
         style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btn_shopping_history"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/btn_shopping_history"
         android:background="@drawable/button_secondary"
         android:text="Hỗ trợ" />
 
@@ -141,10 +141,10 @@
         style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btn_support"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/btn_support"
         android:background="@drawable/button_secondary"
         android:text="Đổi mật khẩu" />
 
