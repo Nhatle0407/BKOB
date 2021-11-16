@@ -12,11 +12,8 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentCartBinding;
-import com.example.bkob.databinding.FragmentHomeBinding;
 import com.example.bkob.models.BookModel;
-import com.example.bkob.models.ReceiveModel;
 import com.example.bkob.views.adapters.CartAdapter;
-import com.example.bkob.views.interfaces.CartInterface;
 
 import java.util.ArrayList;
 import java.util.List;

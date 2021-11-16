@@ -77,7 +77,6 @@ public class HomePresenter {
                     }
                     categoryAdapter = new CategoryAdapter(context, categoryList);
                     homeInterface.showCategory(categoryAdapter);
-
                 }
                 else{
                     Log.d("Category", "Cannot load category");
