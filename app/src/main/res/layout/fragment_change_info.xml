@@ -38,6 +38,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/change_info_edit_wrapper"
         android:layout_below="@id/btn_change_user_image"
         android:layout_marginTop="30dp"
         android:paddingRight="30dp"
@@ -90,6 +91,17 @@
 
     </RelativeLayout>
 
-
+    <Button
+        android:id="@+id/btn_changeInfo"
+        style="@style/Button"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/change_info_edit_wrapper"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button_main"
+        android:text="Lưu thay đổi"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

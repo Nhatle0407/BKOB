@@ -11,6 +11,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/edittext.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_arrow_left.xml" value="0.221875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_camera.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_cart.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_chevron_down.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_person.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_icon_filter.xml" value="0.221875" />
@@ -38,7 +39,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/fragment_signup.xml" value="0.129981884057971" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_buy_history.xml" value="0.4" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_cart.xml" value="0.264" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_category.xml" value="0.6" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_category.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_notification.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_receive.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_search.xml" value="0.20572916666666666" />
@@ -47,6 +48,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/item_spinner_selected.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/loading_dialog.xml" value="0.536" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/shimmer.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/shimmer_book.xml" value="0.15572916666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/shimmer_category.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/spinner_item.xml" value="0.6" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/layout/spinner_selected.xml" value="0.536" />

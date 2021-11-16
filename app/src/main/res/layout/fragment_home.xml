@@ -5,10 +5,12 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".views.fragments.HomeFragment">
 
     <TextView
-        android:id="@+id/search"
+        android:id="@+id/home_logo"
         style="@style/AppNameSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +37,7 @@
         android:id="@+id/container_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search"
+        android:layout_below="@id/home_logo"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp">
@@ -97,7 +99,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_categoty"
         android:layout_marginTop="10dp"
-
         android:paddingHorizontal="10dp">
 
         <LinearLayout
@@ -115,35 +116,75 @@
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
-    <TextView
-        android:id="@+id/tv_allBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Header"
-        android:text="Tất cả sách"
+    <RelativeLayout
+        android:id="@+id/container_allBook"
         android:layout_below="@id/tv_categoty"
-        android:layout_marginTop="180dp"
-        android:layout_marginStart="20dp"/>
+        android:layout_marginTop="130dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_allBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Header"
+            android:text="Tất cả sách"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"/>
 
-    <TextView
-        android:id="@+id/tv_seeAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Caption"
-        android:text="Xem tất cả"
-        android:layout_below="@id/tv_categoty"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="20dp"
-        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/tv_seeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Caption"
+            android:text="Xem tất cả"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_allBook"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@id/tv_allBook"
+        android:layout_below="@id/container_allBook"
         android:layout_centerHorizontal="true"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_search"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_book"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/container_allBook">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/shimmer_block1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include layout="@layout/shimmer_book"/>
+                <include layout="@layout/shimmer_book"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shimmer_block2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shimmer_block1"
+                android:orientation="horizontal">
+                <include layout="@layout/shimmer_book"/>
+                <include layout="@layout/shimmer_book"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </RelativeLayout>
