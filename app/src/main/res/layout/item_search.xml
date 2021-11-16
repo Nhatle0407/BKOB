@@ -16,16 +16,17 @@
         android:contentDescription="TODO"
         android:scaleType="fitCenter"
         android:src="@drawable/giaitich" />
+
     <TextView
         android:id="@+id/name_item_search"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/header"
         style="@style/Caption"
-        android:layout_marginStart="10dp"
-        android:layout_below="@id/avatar_item_search"
-        android:text="Giải tích 2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avatar_item_search"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Giải tích 2"
+        android:textColor="@color/header" />
     <TextView
         android:id="@+id/quanty_item_search"
         android:layout_marginTop="5dp"
