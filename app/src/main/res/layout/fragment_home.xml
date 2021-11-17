@@ -33,23 +33,16 @@
         android:contentDescription="TODO"
         android:src="@drawable/ic_akar_icons_cart" />
 
-    <RelativeLayout
-        android:id="@+id/container_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/home_logo"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp">
 
         <EditText
             android:id="@+id/edt_search"
             style="@style/Body"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_below="@id/home_logo"
             android:layout_centerInParent="true"
-            android:layout_marginEnd="10dp"
-            android:layout_toStartOf="@id/menu"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
             android:autofillHints="Tìm kiếm"
             android:background="@drawable/edittext"
             android:drawableStart="@drawable/ic_akar_icons_search"
@@ -60,16 +53,6 @@
             android:paddingRight="10dp"
             android:paddingBottom="5dp" />
 
-        <ImageButton
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="@color/background"
-            android:contentDescription="TODO"
-            android:src="@drawable/ic_icon_filter" />
-    </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_categoty"
@@ -77,7 +60,7 @@
         android:layout_height="wrap_content"
         style="@style/Header"
         android:text="Danh mục"
-        android:layout_below="@id/container_search"
+        android:layout_below="@id/edt_search"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"/>
 

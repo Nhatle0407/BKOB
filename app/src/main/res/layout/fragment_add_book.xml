@@ -6,15 +6,6 @@
     android:background="@color/background"
     tools:context=".views.fragments.AddBookFragment">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="#f8f8f8"
-        android:contentDescription="TODO"
-        android:src="@drawable/ic_akar_icons_arrow_left" />
 
     <TextView
         android:id="@+id/tv_addBook"
@@ -33,7 +24,7 @@
         style="@style/BoldBody"
         android:text="Bạn muốn bán gì?"
         android:textColor="@color/header"
-        android:layout_below="@id/btn_back"
+        android:layout_below="@id/tv_addBook"
         android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"/>
 

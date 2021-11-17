@@ -32,61 +32,6 @@
             android:maxLines="1"
             android:text="Giải tích 2"
             android:textColor="@color/header" />
-        <RelativeLayout
-            android:layout_below="@id/name_cart"
-            android:id="@+id/container_cart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-
-                style="@style/Body"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="Số lượng:"
-                android:textColor="@color/header" />
-
-            <TextView
-                android:background="@drawable/custom_text"
-                android:id="@+id/cart_add"
-                style="@style/Header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="15dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:text=" + " />
-
-            <TextView
-                android:id="@+id/cart_quanty"
-                style="@style/BoldBody"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="5dp"
-                android:layout_toStartOf="@id/cart_add"
-                android:background="@drawable/custom_text"
-                android:gravity="center"
-                android:text="1" />
-
-            <TextView
-                android:background="@drawable/custom_text"
-                android:id="@+id/cart_sub"
-                style="@style/Header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_toStartOf="@id/cart_quanty"
-                android:clickable="true"
-                android:focusable="true"
-                android:text=" - " />
-        </RelativeLayout>
 
 
         <TextView
@@ -94,9 +39,9 @@
             style="@style/Price"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/container_cart"
+            android:layout_below="@id/name_cart"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="20.0000đ"
             android:textSize="16sp" />
     </RelativeLayout>

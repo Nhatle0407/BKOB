@@ -40,7 +40,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
         BookModel bookModel = bookModels.get(position);
         holder.name.setText(bookModel.getName());
         holder.price.setText(bookModel.getPrice() + "đ");
-        holder.quantity.setText(bookModel.getQuantity());
         try{
             Picasso.get().load(bookModel.getImageUrl()).into(holder.avatar);
         }
@@ -52,22 +51,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             public void onClick(View view) {
                 bookModels.remove(holder.getAdapterPosition());
                 notifyDataSetChanged();
-            }
-        });
-        holder.add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int temp = Integer.parseInt(bookModel.getQuantity()) + 1;
-                bookModel.setQuantity( temp + "");
-                holder.quantity.setText(bookModel.getQuantity() );
-            }
-        });
-        holder.sub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int temp = Integer.parseInt(bookModel.getQuantity()) - 1;
-                bookModel.setQuantity( temp + "");
-                holder.quantity.setText(bookModel.getQuantity());
             }
         });
     }
@@ -86,9 +69,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             avatar = itemView.findViewById(R.id.avatar_cart);
             name = itemView.findViewById(R.id.name_cart);
             price = itemView.findViewById(R.id.price_cart);
-            sub = itemView.findViewById(R.id.cart_sub);
-            add = itemView.findViewById(R.id.cart_add);
-            quantity = itemView.findViewById(R.id.cart_quanty);
             delete = itemView.findViewById(R.id.remove_cart);
         }
     }

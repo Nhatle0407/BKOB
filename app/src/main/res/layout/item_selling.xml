@@ -26,20 +26,12 @@
         android:text="Giải tích 2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/quanty_item_selling"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
-        style="@style/Caption"
-        android:layout_below="@id/name_item_selling"
-        android:text="Số lượng: 1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/price_item_selling"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
-        android:layout_below="@id/quanty_item_selling"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:text="20.000đ"
         style="@style/Caption"
         android:layout_width="wrap_content"

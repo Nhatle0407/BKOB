@@ -47,11 +47,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
         String imageUrl = bookModel.getImageUrl();
         String name = bookModel.getName();
-        String quantity = "Số lượng: " + bookModel.getQuantity();
         String price = String.format("%,dđ", Integer.parseInt(bookModel.getPrice().toString()));
 
         holder.bookName.setText(name);
-        holder.bookQuantity.setText(quantity);
         holder.bookPrice.setText(price);
         try{
             Log.d("ALLBOOK", "Image Url: "+imageUrl);
@@ -93,7 +91,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
     class BookHolder extends RecyclerView.ViewHolder{
         private ImageView bookImage;
-        private TextView bookName, bookQuantity, bookPrice;
+        private TextView bookName, bookPrice;
         private ImageButton btnAdd;
 
         public BookHolder(@NonNull View itemView) {
@@ -101,7 +99,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
             bookImage = itemView.findViewById(R.id.avatar_item_search);
             bookName = itemView.findViewById(R.id.name_item_search);
-            bookQuantity = itemView.findViewById(R.id.quanty_item_search);
             bookPrice = itemView.findViewById(R.id.price_item_search);
             btnAdd = itemView.findViewById(R.id.btn_cart_item_search);
         }

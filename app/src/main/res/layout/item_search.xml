@@ -5,14 +5,14 @@
     android:layout_marginTop="20dp"
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
-    android:layout_height="180dp">
+    android:layout_height="170dp">
 
     <ImageView
         android:id="@+id/avatar_item_search"
         android:layout_width="59.6dp"
         android:layout_height="81dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:contentDescription="TODO"
         android:scaleType="fitCenter"
         android:src="@drawable/giaitich" />
@@ -26,20 +26,12 @@
         android:text="Giải tích 2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/quanty_item_search"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
-        style="@style/Caption"
-        android:layout_below="@id/name_item_search"
-        android:text="Số lượng: 1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/price_item_search"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
-        android:layout_below="@id/quanty_item_search"
+        android:layout_alignParentBottom="true"
         android:text="20.000đ"
         style="@style/Caption"
         android:layout_width="wrap_content"
