@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".views.fragments.NotificationFragment">
 
+    <TextView
+        android:id="@+id/notify_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn chưa đăng nhập!"
+        style="@style/BoldBody"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
 
     <TextView
         android:id="@+id/tv_notify"

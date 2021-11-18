@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import com.example.bkob.presenters.NotifyPresenter;
 import com.example.bkob.views.adapters.NotifyAdapter;
 import com.example.bkob.views.interfaces.NotifyInterface;
 import com.example.bkob.views.interfaces.OrderRInterface;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class NotificationFragment extends Fragment implements NotifyInterface {
@@ -42,7 +44,12 @@ public class NotificationFragment extends Fragment implements NotifyInterface {
         notifyRv = binding.rvNotification;
         notifyPresenter = new NotifyPresenter(getContext(), this);
 
-        notifyPresenter.loadNotify();
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            binding.notifyEmpty.setVisibility(View.VISIBLE);
+        }
+        else{
+            notifyPresenter.loadNotify();
+        }
     }
 
     @Override

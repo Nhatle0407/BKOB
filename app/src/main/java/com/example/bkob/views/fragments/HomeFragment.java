@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,7 @@ import com.example.bkob.views.adapters.CategoryAdapter;
 import com.example.bkob.views.interfaces.DetailInterface;
 import com.example.bkob.views.interfaces.HomeInterface;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment extends Fragment implements HomeInterface {
     private FragmentHomeBinding binding;
@@ -53,6 +55,10 @@ public class HomeFragment extends Fragment implements HomeInterface {
         binding.btnCartHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(FirebaseAuth.getInstance().getCurrentUser() == null){
+                    Toast.makeText(getContext(), "Vui lòng đăng nhập trước!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 replaceFragment(new CartFragment());
                 getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
             }

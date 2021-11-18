@@ -31,6 +31,7 @@ import com.example.bkob.views.adapters.CategoryDropdownAdapter;
 import com.example.bkob.views.customView.SuccessDialog;
 import com.example.bkob.views.customView.CustomProgressDialog;
 import com.example.bkob.views.interfaces.AddBookInterface;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class AddBookFragment extends Fragment implements AddBookInterface {
@@ -94,6 +95,10 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
     }
 
     private void clickAddBook() {
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            Toast.makeText(getContext(), "Vui lòng đăng nhập trước!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         dialog.show();
         name = binding.etBookName.getText().toString();
         price =  binding.etPrice.getText().toString();
