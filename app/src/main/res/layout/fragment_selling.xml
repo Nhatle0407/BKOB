@@ -25,6 +25,7 @@
         android:text="Sản phẩm của bạn"
         style="@style/Header" />
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_selling"
         android:layout_marginTop="40dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +15,15 @@ import android.view.ViewGroup;
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentBuyHistoryBinding;
 import com.example.bkob.databinding.FragmentSellingBinding;
+import com.example.bkob.presenters.SellingPresenter;
+import com.example.bkob.views.adapters.SellingAdapter;
+import com.example.bkob.views.interfaces.SellingInterface;
 
-public class SellingFragment extends Fragment {
+public class SellingFragment extends Fragment implements SellingInterface {
 
     FragmentSellingBinding binding;
+    SellingPresenter sellingPresenter;
+    RecyclerView sellingRv;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,6 +33,11 @@ public class SellingFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        sellingPresenter = new SellingPresenter(getContext(), this);
+        sellingRv = binding.rclSelling;
+
+        sellingPresenter.loadSelling();
 
         binding.btnBackSelling.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +53,15 @@ public class SellingFragment extends Fragment {
         fragmentManager.beginTransaction()
                 .replace(R.id.mainFragments, fragment)
                 .commit();
+    }
+
+    @Override
+    public void sellingEmpty() {
+
+    }
+
+    @Override
+    public void showSelling(SellingAdapter adapter) {
+        sellingRv.setAdapter(adapter);
     }
 }
