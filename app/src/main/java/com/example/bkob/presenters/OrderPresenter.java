@@ -90,14 +90,18 @@ public class OrderPresenter {
         });
     }
 
-    private void pushNotification(String uid, String bookName, String fromName, String date, String orderId) {
+    private void pushNotification(String uid, String bookName, String fromName, String address, String phone, String total, String date, String orderId) {
         DatabaseReference notifyRef = database.getReference("notifycations");
         String notifyId = "notify" + System.currentTimeMillis();
 
         HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("notifyId", ""+notifyId);
         hashMap.put("bookName", ""+bookName);
         hashMap.put("fromName", ""+fromName);
         hashMap.put("date", ""+date);
+        hashMap.put("address", ""+address);
+        hashMap.put("phone", ""+phone);
+        hashMap.put("total", ""+total);
         hashMap.put("orderId", ""+orderId);
         hashMap.put("status", "unread");
 
@@ -137,7 +141,7 @@ public class OrderPresenter {
             orderRef.child(orderId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
-                    pushNotification(bookModel.getUserId(), bookModel.getName(), userModel.getName(), date, orderId);
+                    pushNotification(bookModel.getUserId(), bookModel.getName(), userModel.getName(),userModel.getAddress(), userModel.getPhone(), bookModel.getPrice(), date, orderId);
                 }
             });
         }

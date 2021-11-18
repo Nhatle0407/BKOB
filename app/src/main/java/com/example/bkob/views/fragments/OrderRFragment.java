@@ -14,17 +14,20 @@ import android.view.ViewGroup;
 
 import com.example.bkob.R;
 import com.example.bkob.Singleton.DetailSaleSingleton;
+import com.example.bkob.Singleton.OrderSingleton;
 import com.example.bkob.databinding.FragmentAccountBinding;
 import com.example.bkob.databinding.FragmentOrderRBinding;
 import com.example.bkob.models.BookModel;
+import com.example.bkob.models.NotifyModel;
 import com.example.bkob.models.ReceiveModel;
 import com.example.bkob.models.UserModel;
 import com.example.bkob.views.adapters.ReceiveAdapter;
+import com.example.bkob.views.interfaces.OrderRInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderRFragment extends Fragment {
+public class OrderRFragment extends Fragment  {
     FragmentOrderRBinding binding;
 
 
@@ -38,18 +41,22 @@ public class OrderRFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
+
+        binding.nameInforOrder.setText(OrderSingleton.getNotifyModel().getBookName());
+        binding.userInforReceive.setText(OrderSingleton.getNotifyModel().getFromName());
+        binding.userAddressReceive.setText(OrderSingleton.getNotifyModel().getAddress());
+        binding.userSdt.setText(OrderSingleton.getNotifyModel().getPhone());
+        binding.userDateOrder.setText(OrderSingleton.getNotifyModel().getDate());
+        binding.sumMoneyOrderReceive.setText(OrderSingleton.getNotifyModel().getTotal());
+
         binding.btnBackOrderReceive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new ReceiveFragment());
+                getActivity().onBackPressed();
             }
         });
-        binding.nameInforOrder.setText(DetailSaleSingleton.getReceiveModel().getItem().getName());
-        binding.userInforReceive.setText(DetailSaleSingleton.getReceiveModel().getUserModel());
-        binding.userAddressReceive.setText("Ktx khu A");
-        binding.userSdt.setText("0982068451");
-        binding.userDateOrder.setText(DetailSaleSingleton.getReceiveModel().getDate());
-        binding.sumMoneyOrderReceive.setText(DetailSaleSingleton.getReceiveModel().getItem().getPrice());
     }
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -58,5 +65,6 @@ public class OrderRFragment extends Fragment {
                 .addToBackStack(null)
                 .commit();
     }
+
 
 }

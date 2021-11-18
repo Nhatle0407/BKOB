@@ -83,7 +83,7 @@ public class OrderFragment extends Fragment implements OrderInterface {
     public void showUserInfo(UserModel userModel) {
         binding.tvUserName.setText(userModel.getName());
         binding.edtUserAddress.setText(userModel.getAddress());
-        binding.edtUserSdt.setText(userModel.getAddress());
+        binding.edtUserSdt.setText(userModel.getPhone());
     }
 
     @Override
