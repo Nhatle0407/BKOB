@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.SupportFragment">
+
+    <ImageButton
+        android:id="@+id/btn_back_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#f8f8f8"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_akar_icons_arrow_left" />
+
+    <TextView
+        android:id="@+id/support_title"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Hỗ trợ"
+        android:textColor="@color/header" />
+
+    <TextView
+        android:id="@+id/support_script"
+        style="@style/BoldBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/support_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textAlignment="center"
+        android:text="Nếu có bất cứ phản ánh nào vui lòng liên hệ với đội ngũ phát triển qua email:"
+        android:textColor="@color/body" />
+
+    <TextView
+        android:id="@+id/support_email"
+        style="@style/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/support_script"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textAlignment="center"
+        android:text="support_bkob@gmail.com"
+        android:textColor="@color/body" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/support_email"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_copy"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button_secondary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Copy"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_send_email"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_toRightOf="@id/btn_copy"
+            android:background="@drawable/button_secondary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Gửi email"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+</RelativeLayout>
