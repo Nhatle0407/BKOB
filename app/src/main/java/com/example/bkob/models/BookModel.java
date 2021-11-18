@@ -26,19 +26,11 @@ public class BookModel {
         this.imageUri = imageUri;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public Uri getImageUri() {
-        return imageUri;
-    }
-
     public String getBookId() {
         return bookId;
     }
 
-    public String getUid() {
+    public String getUserId() {
         return userId;
     }
 
@@ -58,6 +50,21 @@ public class BookModel {
         return price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public Uri getImageUri() {
+        return imageUri;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -75,10 +82,6 @@ public class BookModel {
         this.price = price;
     }
 
-    public void setUid(String uid) {
-        this.userId = uid;
-    }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -87,11 +90,9 @@ public class BookModel {
         this.imageUri = imageUri;
     }
 
-
     public boolean isValidName(){
         return !TextUtils.isEmpty(name);
     }
-
 
     public boolean isValidPrice(){
         return !TextUtils.isEmpty(price);

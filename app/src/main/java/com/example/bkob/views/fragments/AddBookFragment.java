@@ -28,7 +28,7 @@ import com.example.bkob.databinding.FragmentAddBookBinding;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.presenters.AddBookPresenter;
 import com.example.bkob.views.adapters.CategoryDropdownAdapter;
-import com.example.bkob.views.customView.AddBookSuccessDialog;
+import com.example.bkob.views.customView.SuccessDialog;
 import com.example.bkob.views.customView.CustomProgressDialog;
 import com.example.bkob.views.interfaces.AddBookInterface;
 
@@ -142,7 +142,7 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
     @Override
     public void addBookSuccess() {
         dialog.hide();
-        AddBookSuccessDialog successDialog = new AddBookSuccessDialog(getContext());
+        SuccessDialog successDialog = new SuccessDialog(getContext());
         successDialog.show();
         clearInput();
     }

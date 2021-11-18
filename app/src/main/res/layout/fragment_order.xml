@@ -22,25 +22,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Thông tin đơn hàng"
+        android:text="Đơn hàng"
         android:textColor="@color/header" />
 
-    <TextView
-        android:id="@+id/name_infor_order"
-        style="@style/Header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_order"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Giải tích 2"
-        android:textColor="@color/body" />
+
     <RelativeLayout
         android:id="@+id/name"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/name_infor_order"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/title_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -52,9 +43,8 @@
             android:layout_height="wrap_content"/>
         <TextView
             style="@style/Body"
-            android:id="@+id/user_infor_receive"
+            android:id="@+id/tv_user_name"
             android:layout_centerVertical="true"
-            android:text="Lê Nguyên Khang"
             android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -76,23 +66,21 @@
             android:layout_height="wrap_content"/>
 
         <EditText
-
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:id="@+id/edt_user_address"
             style="@style/Body"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/edittext"
             android:gravity="end"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="Ktx khu B"
             android:textSize="16sp"
             android:autofillHints="Tìm kiếm"
-            android:inputType="number" />
+            android:inputType="text" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -118,66 +106,37 @@
             android:id="@+id/edt_user_sdt"
             style="@style/Body"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/edittext"
             android:gravity="end"
             android:paddingTop="5dp"
+            android:clickable="true"
             android:paddingBottom="5dp"
-            android:text="0982068451" />
+            android:inputType="number"/>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/money"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/sdt_order"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:textColor="@color/body"
-            style="@style/Header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="Thành tiền: "
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/sum_money"
-            style="@style/Body"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:text="20.000đ" />
-    </RelativeLayout>
 
     <Button
         android:id="@+id/btn_confirm_order"
         style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/money"
-        android:layout_marginLeft="20dp"
+        android:layout_below="@id/sdt_order"
+        android:layout_marginHorizontal="25dp"
         android:layout_marginTop="60dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/button_main"
         android:text="Đặt hàng ngay" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_cancel_receive"
+        android:id="@+id/btn_cancel_order"
         style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
         android:layout_below="@id/btn_confirm_order"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/button_secondary"
         android:text="Hủy" />
 

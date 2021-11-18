@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 
 import com.example.bkob.R;
 
-public class AddBookSuccessDialog extends Dialog {
-    public AddBookSuccessDialog(@NonNull Context context) {
+public class SuccessDialog extends Dialog {
+    public SuccessDialog(@NonNull Context context) {
         super(context);
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -24,7 +24,7 @@ public class AddBookSuccessDialog extends Dialog {
         setTitle(null);
         setCancelable(true);
         setOnCancelListener(null);
-        View view = LayoutInflater.from(context).inflate(R.layout.addbooksuccess_dialog, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.success_dialog, null);
         setContentView(view);
     }
 }
