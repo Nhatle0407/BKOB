@@ -82,7 +82,11 @@ public class CartFragment extends Fragment implements CartInterface {
 
     @Override
     public void cartEmpty() {
+        binding.tvQuantity.setVisibility(View.GONE);
+        binding.tvQuantityTitle.setVisibility(View.GONE);
+        binding.btnBuyNow.setVisibility(View.GONE);
         binding.tvCartEmpty.setVisibility(View.VISIBLE);
+
     }
 
     @Override
@@ -93,6 +97,12 @@ public class CartFragment extends Fragment implements CartInterface {
             @Override
             public void changeCart() {
                 binding.tvQuantity.setText(adapter.getItemCount() + " sản phẩm");
+                if(adapter.getItemCount() == 0 ){
+                    binding.tvCartEmpty.setVisibility(View.VISIBLE);
+                    binding.tvQuantity.setVisibility(View.GONE);
+                    binding.tvQuantityTitle.setVisibility(View.GONE);
+                    binding.btnBuyNow.setVisibility(View.GONE);
+                }
             }
         });
         Log.d("CART", "" + adapter.getItemCount());

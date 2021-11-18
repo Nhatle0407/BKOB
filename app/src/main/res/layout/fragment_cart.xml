@@ -50,13 +50,13 @@
 
     <TextView
         android:id="@+id/tv_quantity_title"
+        style="@style/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/btn_buy_now"
         android:layout_marginStart="25dp"
         android:layout_marginBottom="10dp"
-        android:text="Số lượng: "
-        style="@style/Header"
-        android:layout_above="@id/btn_buy_now"/>
+        android:text="Số lượng: " />
 
     <TextView
         android:id="@+id/tv_quantity"
