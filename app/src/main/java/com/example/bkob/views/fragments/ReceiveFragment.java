@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 
 import com.example.bkob.R;
 import com.example.bkob.Singleton.DetailSaleSingleton;
+import com.example.bkob.Singleton.OrderSingleton;
 import com.example.bkob.databinding.FragmentReceiveBinding;
 import com.example.bkob.models.BookModel;
+import com.example.bkob.models.NotifyModel;
 import com.example.bkob.models.ReceiveModel;
 import com.example.bkob.views.adapters.ReceiveAdapter;
 import com.example.bkob.views.interfaces.DetailSaleInterface;
@@ -24,7 +26,7 @@ import java.util.List;
 
 
 public class ReceiveFragment extends Fragment {
-    List<ReceiveModel> receiveModelList;
+    List<NotifyModel> receiveModelList;
     FragmentReceiveBinding binding;
 
     @Override
@@ -40,8 +42,8 @@ public class ReceiveFragment extends Fragment {
         add();
         ReceiveAdapter receiveAdapter = new ReceiveAdapter(receiveModelList, new DetailSaleInterface() {
             @Override
-            public void detailSale(int i) {
-                DetailSaleSingleton.setReceiveModel(receiveModelList.get(i));
+            public void detailSale(NotifyModel notifyModel) {
+                OrderSingleton.setNotifyModel(notifyModel);
                 replaceFragment(new OrderRFragment());
             }
         });
@@ -55,7 +57,6 @@ public class ReceiveFragment extends Fragment {
     }
     private void add(){
         receiveModelList = new ArrayList<>();
-        receiveModelList.add(new ReceiveModel(new BookModel("Giải tích 1", "Với nhiều nội dung quan trọng như tích phân, lượng giác, đạo hàm, nội dung chi tiết rõ ràng giúp bạn qua môn dễ dàng hơn", "Giáo trình", "20000",  "P0hDk7huZuVd4d1ihtPagHdWYYI2", "https://firebasestorage.googleapis.com/v0/b/bkob-a0229.appspot.com/o/book_image%2FP0hDk7huZuVd4d1ihtPagHdWYYI21636977469078?alt=media&token=abe51fd6-4f45-408d-8916-536c0e098512"), "22/10/2021", "idfghj"));
     }
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

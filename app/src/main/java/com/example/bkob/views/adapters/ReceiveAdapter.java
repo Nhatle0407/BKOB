@@ -11,17 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
+import com.example.bkob.models.NotifyModel;
 import com.example.bkob.models.ReceiveModel;
 import com.example.bkob.views.interfaces.DetailSaleInterface;
 
 import java.util.List;
 
 public class ReceiveAdapter extends  RecyclerView.Adapter<ReceiveAdapter.ReceiveHolder>{
-    private final List<ReceiveModel> receiveModelList;
+    private final List<NotifyModel> modelList;
     private DetailSaleInterface detailSaleInterface;
 
-    public ReceiveAdapter(List<ReceiveModel> receiveModelList, DetailSaleInterface detailSaleInterface) {
-        this.receiveModelList = receiveModelList;
+    public ReceiveAdapter(List<NotifyModel> receiveModelList, DetailSaleInterface detailSaleInterface) {
+        this.modelList = receiveModelList;
         this.detailSaleInterface = detailSaleInterface;
     }
 
@@ -35,16 +36,16 @@ public class ReceiveAdapter extends  RecyclerView.Adapter<ReceiveAdapter.Receive
 
     @Override
     public void onBindViewHolder(@NonNull ReceiveHolder holder, int position) {
-        ReceiveModel item = receiveModelList.get(position);
-        holder.name.setText(item.getItem().getName());
-        holder.price.setText(item.getItem().getPrice());
+        NotifyModel item = modelList.get(position);
+        holder.name.setText(item.getBookName());
+        holder.price.setText(item.getTotal());
         holder.date.setText(item.getDate());
         holder.detail.setText(Html.fromHtml("<u>"+"Chi tiết"+"</u>"));
         holder.detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(detailSaleInterface != null){
-                    detailSaleInterface.detailSale(holder.getAdapterPosition());
+                    detailSaleInterface.detailSale(item);
                 }
             }
         });
@@ -52,7 +53,7 @@ public class ReceiveAdapter extends  RecyclerView.Adapter<ReceiveAdapter.Receive
 
     @Override
     public int getItemCount() {
-        return receiveModelList.size();
+        return modelList.size();
     }
 
     class ReceiveHolder extends RecyclerView.ViewHolder {
