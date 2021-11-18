@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:text="Lê Nguyên Khang"
+            android:text=""
             android:textColor="@color/body" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/user_name"
             android:layout_marginTop="5dp"
-            android:text="khang@gmail.com"
+            android:text=""
             android:textColor="@color/body" />
 
         <TextView
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/user_email"
             android:layout_marginTop="5dp"
-            android:text="0123456789"
+            android:text=""
             android:textColor="@color/body" />
 
     </RelativeLayout>
