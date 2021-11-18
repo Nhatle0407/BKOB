@@ -66,8 +66,13 @@ public class ChangePasswordFragment extends Fragment {
         currentPassword = binding.inputCurrentPassword.getText().toString();
         newPassword = binding.inputNewPassword.getText().toString();
         confirmPassword = binding.inputConfirmPassword.getText().toString();
+        if (newPassword.equals("")){
+            Toast.makeText(getContext(), "Thay đổi thất bại. Vui nhập mật khẩu mới", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (!newPassword.equals(confirmPassword)){
             Toast.makeText(getContext(), "Mật khẩu xác nhận không khớp", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();;

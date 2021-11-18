@@ -91,7 +91,9 @@ public class AccountFragment extends Fragment {
                     getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
                 }
                 else {
-                    Toast.makeText(getContext(), "Hãy đăng nhập trước", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), AuthenticationActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -103,7 +105,9 @@ public class AccountFragment extends Fragment {
                     getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
                 }
                 else {
-                    Toast.makeText(getContext(), "Hãy đăng nhập trước", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), AuthenticationActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -115,7 +119,9 @@ public class AccountFragment extends Fragment {
                     getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
                 }
                 else {
-                    Toast.makeText(getContext(), "Hãy đăng nhập trước", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), AuthenticationActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -134,7 +140,9 @@ public class AccountFragment extends Fragment {
                     getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
                 }
                 else {
-                    Toast.makeText(getContext(), "Hãy đăng nhập trước", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), AuthenticationActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -146,7 +154,9 @@ public class AccountFragment extends Fragment {
                     getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
                 }
                 else {
-                    Toast.makeText(getContext(), "Hãy đăng nhập trước", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), AuthenticationActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
