@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
+import com.example.bkob.views.interfaces.CartInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +29,6 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
     private List<BookModel> bookModels;
-
 
     public CartAdapter(List<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -51,7 +51,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             Picasso.get().load(bookModel.getImageUrl()).into(holder.avatar);
         }
         catch (Exception e){
-            Log.d("Book", "Fail to load image:"+e.getMessage());
+            Log.d("CART", "Fail to load image:"+e.getMessage());
         }
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +84,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
     @Override
     public int getItemCount() {
         return bookModels.size();
+    }
+
+    public String getTotal(){
+        long total = 0;
+        for(BookModel bookModel : bookModels){
+            total+= Integer.parseInt(bookModel.getPrice());
+        }
+        return String.format("%,dđ", total);
     }
 
     class  CartHolder extends RecyclerView.ViewHolder {

@@ -4,27 +4,25 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 public class BookModel {
-    private String bookId, userId, name, description, category, price, quantity, imageUrl;
+    private String bookId, userId, name, description, category, price, imageUrl;
     private Uri imageUri;
 
     public BookModel() {
     }
 
-    public BookModel(String name, String description, String category, String price, String quantity, String userId, String imageUrl) {
+    public BookModel(String name, String description, String category, String price, String userId, String imageUrl) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.price = price;
-        this.quantity = quantity;
         this.userId = userId;
         this.imageUrl = imageUrl;
     }
-    public BookModel(String name, String description, String category, String price, String quantity, Uri imageUri) {
+    public BookModel(String name, String description, String category, String price, Uri imageUri) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.price = price;
-        this.quantity = quantity;
         this.imageUri = imageUri;
     }
 
@@ -60,9 +58,6 @@ public class BookModel {
         return price;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -78,10 +73,6 @@ public class BookModel {
 
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
     }
 
     public void setUid(String uid) {
@@ -101,10 +92,6 @@ public class BookModel {
         return !TextUtils.isEmpty(name);
     }
 
-
-    public boolean isValidQuantity(){
-        return !TextUtils.isEmpty(quantity);
-    }
 
     public boolean isValidPrice(){
         return !TextUtils.isEmpty(price);

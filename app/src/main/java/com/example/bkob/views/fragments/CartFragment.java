@@ -1,6 +1,7 @@
 package com.example.bkob.views.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,5 +70,10 @@ public class CartFragment extends Fragment implements CartInterface {
     @Override
     public void showCart(CartAdapter adapter) {
         cartRv.setAdapter(adapter);
+        Log.d("CART", "" + adapter.getItemCount());
+        Log.d("CART", adapter.getTotal());
+        binding.tvQuantity.setText(""+adapter.getItemCount());
+        binding.tvTotal.setText(adapter.getTotal());
     }
+
 }

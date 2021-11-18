@@ -43,6 +43,8 @@ public class CartPresenter {
 
     public void loadId(){
         DatabaseReference cartRef = database.getReference("carts");
+        int quantity = bookList.size();
+        long total = 0;
         cartRef.child(FirebaseAuth.getInstance().getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -81,6 +83,7 @@ public class CartPresenter {
             }
         });
     }
+
 
     private void initAdapter() {
         cartAdapter = new CartAdapter(bookList);

@@ -73,10 +73,7 @@ public class AddBookPresenter {
             addBookInterface.priceInvalid();
             return;
         }
-        if(!bookModel.isValidQuantity()){
-            addBookInterface.quatityInvalid();
-            return;
-        }
+
 
         String userId = FirebaseAuth.getInstance().getUid();
         String bookId = userId + System.currentTimeMillis();
@@ -97,7 +94,6 @@ public class AddBookPresenter {
                     hashMap.put("name", ""+bookModel.getName());
                     hashMap.put("category", ""+bookModel.getCategory());
                     hashMap.put("price", ""+bookModel.getPrice());
-                    hashMap.put("quantity", ""+bookModel.getQuantity());
                     hashMap.put("description", ""+bookModel.getDescription());
                     hashMap.put("imageUrl", ""+imageUrl);
 
