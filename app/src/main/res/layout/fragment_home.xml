@@ -24,10 +24,10 @@
 
     <ImageButton
         android:id="@+id/btn_cart_home"
-        android:layout_width="21dp"
-        android:layout_height="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:background="#f8f8f8"
         android:contentDescription="TODO"

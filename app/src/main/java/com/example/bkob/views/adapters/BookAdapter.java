@@ -15,8 +15,11 @@ import com.example.bkob.models.BookModel;
 import com.example.bkob.models.CategoryModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
@@ -73,13 +76,24 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         String timeStamp = ""+System.currentTimeMillis();
         String uid = FirebaseAuth.getInstance().getUid();
         hashMap.put("bookId", bookModel.getBookId());
-        Log.d("ALLBOOK", "userID: "+ bookModel.getUid());
-        Log.d("ALLBOOK", "bookID: "+ bookModel.getBookId());
-        Log.d("ALLBOOK", "book name: "+ bookModel.getName());
-        cartRef.child(uid).child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+        cartRef.child(uid).orderByChild("bookId").equalTo(bookModel.getBookId()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(context, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    Toast.makeText(context, "Sách đã có trong giỏ hàng!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    cartRef.child(uid).child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
     }
