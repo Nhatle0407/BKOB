@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +17,17 @@ import com.example.bkob.Singleton.CartSingleton;
 import com.example.bkob.Singleton.DetailSingleton;
 import com.example.bkob.databinding.FragmentDetailBinding;
 import com.example.bkob.databinding.FragmentHomeBinding;
+import com.example.bkob.models.BookModel;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
 
 
 public class DetailFragment extends Fragment {
@@ -55,7 +66,7 @@ public class DetailFragment extends Fragment {
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CartSingleton.getBookModels().add(DetailSingleton.getBookModel());
+                addToCard(DetailSingleton.getBookModel());
             }
         });
     }
@@ -65,5 +76,32 @@ public class DetailFragment extends Fragment {
                 .replace(R.id.mainFragments, fragment)
                 .addToBackStack(null)
                 .commit();
+    }
+    private void addToCard(BookModel bookModel) {
+        DatabaseReference cartRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("carts");
+        HashMap<String, String> hashMap = new HashMap<>();
+        String timeStamp = ""+System.currentTimeMillis();
+        String uid = FirebaseAuth.getInstance().getUid();
+        hashMap.put("bookId", bookModel.getBookId());
+
+        cartRef.child(uid).orderByChild("bookId").equalTo(bookModel.getBookId()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    Toast.makeText(getContext(), "Sách đã có trong giỏ hàng!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    cartRef.child(uid).child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(getContext(), "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
     }
 }
