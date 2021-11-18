@@ -57,32 +57,17 @@
     <EditText
         android:id="@+id/et_price"
         style="@style/Body"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/et_bookName"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edittext"
         android:hint="Giá"
         android:inputType="number"
         android:paddingHorizontal="10dp" />
 
-    <EditText
-        android:id="@+id/et_quantity"
-        style="@style/Body"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/et_bookName"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
-        android:layout_toEndOf="@+id/et_price"
-        android:background="@drawable/edittext"
-        android:hint="Số lượng"
-        android:inputType="number"
-        android:paddingHorizontal="10dp" />
 
     <Spinner
         android:id="@+id/spinner"

@@ -28,7 +28,7 @@ import com.example.bkob.databinding.FragmentAddBookBinding;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.presenters.AddBookPresenter;
 import com.example.bkob.views.adapters.CategoryDropdownAdapter;
-import com.example.bkob.views.customView.AddBookSuccessDialog;
+import com.example.bkob.views.customView.SuccessDialog;
 import com.example.bkob.views.customView.CustomProgressDialog;
 import com.example.bkob.views.interfaces.AddBookInterface;
 
@@ -97,10 +97,9 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
         dialog.show();
         name = binding.etBookName.getText().toString();
         price =  binding.etPrice.getText().toString();
-        quantity = binding.etQuantity.getText().toString();
         description = binding.etDescription.getText().toString();
 
-        BookModel bookModel = new BookModel(name, description, category, price, quantity, image_uri);
+        BookModel bookModel = new BookModel(name, description, category, price, image_uri);
         addBookPresenter.addBook(bookModel);
     }
 
@@ -132,11 +131,7 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
         binding.etPrice.setError("Giá tiền không hợp lệ!");
     }
 
-    @Override
-    public void quatityInvalid() {
-        dialog.hide();
-        binding.etQuantity.setError("Số lượng phải lớn hơn 0!");
-    }
+
 
     @Override
     public void imageInvalid() {
@@ -147,7 +142,7 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
     @Override
     public void addBookSuccess() {
         dialog.hide();
-        AddBookSuccessDialog successDialog = new AddBookSuccessDialog(getContext());
+        SuccessDialog successDialog = new SuccessDialog(getContext());
         successDialog.show();
         clearInput();
     }
@@ -155,7 +150,6 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
     private void clearInput() {
         binding.etBookName.setText("");
         binding.etPrice.setText("");
-        binding.etQuantity.setText("");
         binding.etDescription.setText("");
     }
 

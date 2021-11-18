@@ -69,6 +69,7 @@ public class SignUpPresenter {
         hashMap.put("email", ""+signUpModel.getEmail());
         hashMap.put("phone", "");
         hashMap.put("avatar", "");
+        hashMap.put("address", "");
         DatabaseReference userRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("users");
         userRef.child(user.getUid()).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

@@ -4,43 +4,33 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 public class BookModel {
-    private String bookId, userId, name, description, category, price, quantity, imageUrl;
+    private String bookId, userId, name, description, category, price, imageUrl;
     private Uri imageUri;
 
     public BookModel() {
     }
 
-    public BookModel(String name, String description, String category, String price, String quantity, String userId, String imageUrl) {
+    public BookModel(String name, String description, String category, String price, String userId, String imageUrl) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.price = price;
-        this.quantity = quantity;
         this.userId = userId;
         this.imageUrl = imageUrl;
     }
-    public BookModel(String name, String description, String category, String price, String quantity, Uri imageUri) {
+    public BookModel(String name, String description, String category, String price, Uri imageUri) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.price = price;
-        this.quantity = quantity;
         this.imageUri = imageUri;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public Uri getImageUri() {
-        return imageUri;
     }
 
     public String getBookId() {
         return bookId;
     }
 
-    public String getUid() {
+    public String getUserId() {
         return userId;
     }
 
@@ -60,8 +50,20 @@ public class BookModel {
         return price;
     }
 
-    public String getQuantity() {
-        return quantity;
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public Uri getImageUri() {
+        return imageUri;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setName(String name) {
@@ -80,14 +82,6 @@ public class BookModel {
         this.price = price;
     }
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-
-    public void setUid(String uid) {
-        this.userId = uid;
-    }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -96,14 +90,8 @@ public class BookModel {
         this.imageUri = imageUri;
     }
 
-
     public boolean isValidName(){
         return !TextUtils.isEmpty(name);
-    }
-
-
-    public boolean isValidQuantity(){
-        return !TextUtils.isEmpty(quantity);
     }
 
     public boolean isValidPrice(){

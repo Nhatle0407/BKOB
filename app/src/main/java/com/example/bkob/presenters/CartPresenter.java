@@ -82,6 +82,7 @@ public class CartPresenter {
         });
     }
 
+
     private void initAdapter() {
         cartAdapter = new CartAdapter(bookList);
         cartInterface.showCart(cartAdapter);
