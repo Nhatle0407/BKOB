@@ -115,6 +115,7 @@
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_receive.xml" value="0.25" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_search.xml" value="0.5" />
         <entry key="..\:/Users/giang/StudioProjects/BKOB/app/src/main/res/layout/item_selling.xml" value="0.25" />
+        <entry key="..\:/android studio/BKOB/app/src/main/res/drawable/ic_akar_icons_copy.xml" value="0.3828125" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/activity_authentication.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/addbooksuccess_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_account.xml" value="0.36666666666666664" />
@@ -135,11 +136,13 @@
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_selling.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_signup.xml" value="0.36666666666666664" />
+        <entry key="..\:/android studio/BKOB/app/src/main/res/layout/fragment_support.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_buy_history.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_cart.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_category.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_notification.xml" value="0.36666666666666664" />
         <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_receive.xml" value="0.36666666666666664" />
+        <entry key="..\:/android studio/BKOB/app/src/main/res/layout/item_selling.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
