@@ -71,7 +71,8 @@ public class AccountFragment extends Fragment {
         binding.btnSupport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Support", Toast.LENGTH_SHORT).show();
+                replaceFragment(new SupportFragment());
+                getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
             }
         });
         binding.btnChangePassword.setOnClickListener(new View.OnClickListener() {
