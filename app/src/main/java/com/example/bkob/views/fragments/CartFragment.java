@@ -82,9 +82,7 @@ public class CartFragment extends Fragment implements CartInterface {
 
     @Override
     public void cartEmpty() {
-        binding.tvQuantity.setVisibility(View.GONE);
-        binding.tvQuantityTitle.setVisibility(View.GONE);
-        binding.btnBuyNow.setVisibility(View.GONE);
+
         binding.tvCartEmpty.setVisibility(View.VISIBLE);
 
     }
