@@ -12,10 +12,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
+import com.example.bkob.Singleton.DetailSingleton;
 import com.example.bkob.databinding.FragmentHomeBinding;
+import com.example.bkob.models.BookModel;
 import com.example.bkob.presenters.HomePresenter;
 import com.example.bkob.views.adapters.BookAdapter;
 import com.example.bkob.views.adapters.CategoryAdapter;
+import com.example.bkob.views.interfaces.DetailInterface;
 import com.example.bkob.views.interfaces.HomeInterface;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
@@ -79,15 +82,21 @@ public class HomeFragment extends Fragment implements HomeInterface {
         shimmerCategory.setVisibility(View.GONE);
         categoryRv.setAdapter(adapter);
     }
-
     @Override
     public void showAllBook(BookAdapter adapter) {
         shimmerBook.stopShimmer();
         shimmerBook.setVisibility(View.GONE);
         binding.tvEmptyList.setVisibility(View.GONE);
         bookRv.setAdapter(adapter);
+        adapter.onClick(new DetailInterface() {
+            @Override
+            public void detailScreen(BookModel bookModel) {
+                getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
+                replaceFragment(new DetailFragment());
+                DetailSingleton.setBookModel(bookModel);
+            }
+        });
     }
-
     @Override
     public void emptyList() {
         shimmerBook.stopShimmer();
