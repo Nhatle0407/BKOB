@@ -43,54 +43,10 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/cart"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_above="@id/tv_quantity_title"
+        android:layout_above="@id/btn_buy_now"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         tools:listitem="@layout/item_cart" />
-
-    <TextView
-        android:id="@+id/tv_quantity_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="10dp"
-        android:text="Số lượng: "
-        style="@style/Header"
-        android:layout_above="@id/tv_total_title"/>
-
-    <TextView
-        android:id="@+id/tv_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentEnd="true"
-        android:text="0"
-        style="@style/Header"
-        android:textColor="@color/main"
-        android:layout_above="@id/tv_total"/>
-    
-    <TextView
-        android:id="@+id/tv_total_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="20dp"
-        android:text="Tổng cộng: "
-        style="@style/Header"
-        android:layout_above="@id/btn_buy_now"/>
-
-    <TextView
-        android:id="@+id/tv_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentEnd="true"
-        android:text="0đ"
-        style="@style/Header"
-        android:textColor="@color/main"
-        android:layout_above="@id/btn_buy_now"/>
 
     <Button
         android:id="@+id/btn_buy_now"
