@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.views.interfaces.CartInterface;
+import com.example.bkob.views.interfaces.ChangeInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +30,7 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
     private List<BookModel> bookModels;
+    private ChangeInterface changeInterface;
 
     public CartAdapter(List<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -59,6 +61,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
                 removeBook(bookModel);
                 bookModels.remove(holder.getAdapterPosition());
                 notifyDataSetChanged();
+                if(changeInterface != null) changeInterface.changeCart();
             }
         });
     }
@@ -105,5 +108,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             price = itemView.findViewById(R.id.price_cart);
             delete = itemView.findViewById(R.id.remove_cart);
         }
+    }
+    public void remove(ChangeInterface changeInterface){
+        this.changeInterface = changeInterface;
     }
 }

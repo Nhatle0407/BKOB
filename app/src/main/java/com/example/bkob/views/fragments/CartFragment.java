@@ -14,11 +14,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
+import com.example.bkob.Singleton.CartSingleton;
 import com.example.bkob.databinding.FragmentCartBinding;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.presenters.CartPresenter;
 import com.example.bkob.views.adapters.CartAdapter;
 import com.example.bkob.views.interfaces.CartInterface;
+import com.example.bkob.views.interfaces.ChangeInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +79,14 @@ public class CartFragment extends Fragment implements CartInterface {
     @Override
     public void showCart(CartAdapter adapter) {
         cartRv.setAdapter(adapter);
+        binding.tvQuantity.setText(adapter.getItemCount() + " sản phẩm");
+
+        adapter.remove(new ChangeInterface() {
+            @Override
+            public void changeCart() {
+                binding.tvQuantity.setText(adapter.getItemCount() + " sản phẩm");
+            }
+        });
         Log.d("CART", "" + adapter.getItemCount());
         Log.d("CART", adapter.getTotal());
     }
