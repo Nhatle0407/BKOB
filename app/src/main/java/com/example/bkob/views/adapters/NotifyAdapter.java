@@ -46,6 +46,13 @@ public class NotifyAdapter extends RecyclerView.Adapter<NotifyAdapter.NotifyHold
             holder.point.setVisibility(View.VISIBLE);
             holder.itemView.setBackgroundResource(R.drawable.background_receive);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

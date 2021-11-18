@@ -65,7 +65,10 @@ public class CartFragment extends Fragment implements CartInterface {
     }
 
     private void clickBuyNow() {
-
+        if(binding.tvQuantity.getText().equals("0")){
+            Toast.makeText(getContext(), "Không có sản phẩm nào!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         replaceFragment(new OrderFragment());
     }
 
@@ -79,7 +82,6 @@ public class CartFragment extends Fragment implements CartInterface {
 
     @Override
     public void cartEmpty() {
-        binding.btnBuyNow.setVisibility(View.INVISIBLE);
         binding.tvCartEmpty.setVisibility(View.VISIBLE);
     }
 
@@ -87,7 +89,6 @@ public class CartFragment extends Fragment implements CartInterface {
     public void showCart(CartAdapter adapter) {
         cartRv.setAdapter(adapter);
         binding.tvQuantity.setText(adapter.getItemCount() + " sản phẩm");
-
         adapter.remove(new ChangeInterface() {
             @Override
             public void changeCart() {
