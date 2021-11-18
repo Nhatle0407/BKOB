@@ -48,6 +48,12 @@ public class DetailFragment extends Fragment {
                 replaceFragment(new HomeFragment());
             }
         });
+        binding.btnCartDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new CartFragment());
+            }
+        });
         binding.nameItemDetail.setText(DetailSingleton.getBookModel().getName());
         binding.price.setText(DetailSingleton.getBookModel().getPrice());
         binding.desDetail.setText(DetailSingleton.getBookModel().getDescription());
