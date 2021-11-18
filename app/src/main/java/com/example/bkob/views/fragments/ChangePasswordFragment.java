@@ -15,6 +15,12 @@ import android.widget.Toast;
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentChangePasswordBinding;
 import com.example.bkob.databinding.FragmentReceiveBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class ChangePasswordFragment extends Fragment {
@@ -61,7 +67,33 @@ public class ChangePasswordFragment extends Fragment {
         newPassword = binding.inputNewPassword.getText().toString();
         confirmPassword = binding.inputConfirmPassword.getText().toString();
         if (!newPassword.equals(confirmPassword)){
-            Toast.makeText(getContext(), "Confirm password does not match", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Mật khẩu xác nhận không khớp", Toast.LENGTH_SHORT).show();
         }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();;
+        String email = user.getEmail();
+        AuthCredential credential = EmailAuthProvider.getCredential(email, currentPassword);
+
+        user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    user.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(!task.isSuccessful()){
+                                Toast.makeText(getContext(), "Thay đổi thất bại. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(getContext(), "Thay đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
+                                replaceFragment(new AccountFragment());
+                            }
+                        }
+                    });
+                }else {
+                    Toast.makeText(getContext(), "Thay đổi thất bại. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
+
