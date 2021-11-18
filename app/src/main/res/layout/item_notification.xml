@@ -10,6 +10,13 @@
     android:paddingHorizontal="10dp"
     android:layout_height="110dp">
 
+    <ImageView
+        android:id="@+id/point_unread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/point"
+        android:layout_alignParentEnd="true"/>
+
    <TextView
        android:id="@+id/tv_notify"
        android:layout_width="match_parent"
@@ -28,7 +35,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/tv_notify_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="01/01/2021"

@@ -56,11 +56,17 @@ public class CartFragment extends Fragment implements CartInterface {
         binding.btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new OrderFragment());
+                clickBuyNow();
             }
         });
 
     }
+
+    private void clickBuyNow() {
+
+        replaceFragment(new OrderFragment());
+    }
+
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -71,6 +77,7 @@ public class CartFragment extends Fragment implements CartInterface {
 
     @Override
     public void cartEmpty() {
+        binding.btnBuyNow.setVisibility(View.GONE);
         binding.tvCartEmpty.setVisibility(View.VISIBLE);
     }
 

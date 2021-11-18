@@ -65,6 +65,10 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         holder.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(FirebaseAuth.getInstance().getCurrentUser() == null){
+                    Toast.makeText(context, "Vui lòng đăng nhập trước!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 addToCard(bookModel);
             }
         });
