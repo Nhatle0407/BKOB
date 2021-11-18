@@ -61,6 +61,12 @@ public class CartFragment extends Fragment implements CartInterface {
                 clickBuyNow();
             }
         });
+        binding.btnBackCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new CartFragment());
+            }
+        });
 
     }
 

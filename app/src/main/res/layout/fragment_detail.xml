@@ -27,16 +27,16 @@
             android:text="@string/detail"
             android:textColor="@color/header" />
 
-        <ImageButton
-            android:id="@+id/btn_cart_detail"
-            android:layout_alignParentEnd="true"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="20dp"
-            android:background="#f8f8f8"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_akar_icons_cart"
-            android:contentDescription="TODO" />
+    <ImageButton
+        android:id="@+id/btn_cart_detail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#f8f8f8"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_akar_icons_cart" />
 
     <ImageView
         android:id="@+id/avatar_detail"
