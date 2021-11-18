@@ -13,14 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
     private List<BookModel> bookModels;
-
-
 
 
     public CartAdapter(List<BookModel> bookModels) {
@@ -39,8 +46,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
     public void onBindViewHolder(@NonNull CartHolder holder, int position) {
         BookModel bookModel = bookModels.get(position);
         holder.name.setText(bookModel.getName());
-        holder.price.setText(bookModel.getPrice() + "đ");
-        holder.quantity.setText(bookModel.getQuantity());
+        holder.price.setText(String.format("%,dđ", Integer.parseInt(bookModel.getPrice().toString())));
         try{
             Picasso.get().load(bookModel.getImageUrl()).into(holder.avatar);
         }
@@ -50,24 +56,27 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                removeBook(bookModel);
                 bookModels.remove(holder.getAdapterPosition());
                 notifyDataSetChanged();
             }
         });
-        holder.add.setOnClickListener(new View.OnClickListener() {
+    }
+
+    private void removeBook(BookModel bookModel) {
+        DatabaseReference cartRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("carts");
+        Query bookQuery = cartRef.child(FirebaseAuth.getInstance().getUid()).orderByChild("bookId").equalTo(bookModel.getBookId());
+
+
+        bookQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                int temp = Integer.parseInt(bookModel.getQuantity()) + 1;
-                bookModel.setQuantity( temp + "");
-                holder.quantity.setText(bookModel.getQuantity() );
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    ds.getRef().removeValue();
+                }
             }
-        });
-        holder.sub.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                int temp = Integer.parseInt(bookModel.getQuantity()) - 1;
-                bookModel.setQuantity( temp + "");
-                holder.quantity.setText(bookModel.getQuantity());
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
     }
@@ -86,9 +95,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder>{
             avatar = itemView.findViewById(R.id.avatar_cart);
             name = itemView.findViewById(R.id.name_cart);
             price = itemView.findViewById(R.id.price_cart);
-            sub = itemView.findViewById(R.id.cart_sub);
-            add = itemView.findViewById(R.id.cart_add);
-            quantity = itemView.findViewById(R.id.cart_quanty);
             delete = itemView.findViewById(R.id.remove_cart);
         }
     }

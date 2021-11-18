@@ -15,8 +15,11 @@ import com.example.bkob.models.BookModel;
 import com.example.bkob.models.CategoryModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
@@ -47,11 +50,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
         String imageUrl = bookModel.getImageUrl();
         String name = bookModel.getName();
-        String quantity = "Số lượng: " + bookModel.getQuantity();
         String price = String.format("%,dđ", Integer.parseInt(bookModel.getPrice().toString()));
 
         holder.bookName.setText(name);
-        holder.bookQuantity.setText(quantity);
         holder.bookPrice.setText(price);
         try{
             Log.d("ALLBOOK", "Image Url: "+imageUrl);
@@ -75,13 +76,24 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         String timeStamp = ""+System.currentTimeMillis();
         String uid = FirebaseAuth.getInstance().getUid();
         hashMap.put("bookId", bookModel.getBookId());
-        Log.d("ALLBOOK", "userID: "+ bookModel.getUid());
-        Log.d("ALLBOOK", "bookID: "+ bookModel.getBookId());
-        Log.d("ALLBOOK", "book name: "+ bookModel.getName());
-        cartRef.child(uid).child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+        cartRef.child(uid).orderByChild("bookId").equalTo(bookModel.getBookId()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(context, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    Toast.makeText(context, "Sách đã có trong giỏ hàng!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    cartRef.child(uid).child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
     }
@@ -93,7 +105,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
     class BookHolder extends RecyclerView.ViewHolder{
         private ImageView bookImage;
-        private TextView bookName, bookQuantity, bookPrice;
+        private TextView bookName, bookPrice;
         private ImageButton btnAdd;
 
         public BookHolder(@NonNull View itemView) {
@@ -101,7 +113,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 
             bookImage = itemView.findViewById(R.id.avatar_item_search);
             bookName = itemView.findViewById(R.id.name_item_search);
-            bookQuantity = itemView.findViewById(R.id.quanty_item_search);
             bookPrice = itemView.findViewById(R.id.price_item_search);
             btnAdd = itemView.findViewById(R.id.btn_cart_item_search);
         }
