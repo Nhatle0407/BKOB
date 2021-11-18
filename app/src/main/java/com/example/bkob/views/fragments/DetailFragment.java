@@ -1,6 +1,7 @@
 package com.example.bkob.views.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.example.bkob.Singleton.CartSingleton;
 import com.example.bkob.Singleton.DetailSingleton;
 import com.example.bkob.databinding.FragmentDetailBinding;
 import com.example.bkob.databinding.FragmentHomeBinding;
+import com.squareup.picasso.Picasso;
 
 
 public class DetailFragment extends Fragment {
@@ -29,6 +31,21 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.btnBackDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new HomeFragment());
+            }
+        });
+        binding.nameItemDetail.setText(DetailSingleton.getBookModel().getName());
+        binding.price.setText(DetailSingleton.getBookModel().getPrice());
+        binding.desDetail.setText(DetailSingleton.getBookModel().getDescription());
+        try{
+            Picasso.get().load(DetailSingleton.getBookModel().getImageUrl()).into(binding.avatarDetail);
+        }
+        catch (Exception e){
+            Log.d("CART", "Fail to load image:"+e.getMessage());
+        }
         binding.purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
