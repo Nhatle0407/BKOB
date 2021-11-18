@@ -67,7 +67,8 @@ public class SellingAdapter extends RecyclerView.Adapter<SellingAdapter.SellingH
     }
 
     private void removeBook(BookModel bookModel) {
-        DatabaseReference sellingRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("selling");
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        DatabaseReference sellingRef = database.getReference("selling");
         Query bookQuery = sellingRef.child(FirebaseAuth.getInstance().getUid()).orderByChild("bookId").equalTo(bookModel.getBookId());
 
         bookQuery.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -81,6 +82,9 @@ public class SellingAdapter extends RecyclerView.Adapter<SellingAdapter.SellingH
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+
+        DatabaseReference homeRef = database.getReference("books");
+        homeRef.child(bookModel.getBookId()).removeValue();
     }
 
     public String getTotal(){
