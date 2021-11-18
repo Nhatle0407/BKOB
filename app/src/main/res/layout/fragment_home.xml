@@ -114,15 +114,6 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"/>
 
-        <TextView
-            android:id="@+id/tv_seeAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Caption"
-            android:text="Xem tất cả"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
-            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
     <TextView

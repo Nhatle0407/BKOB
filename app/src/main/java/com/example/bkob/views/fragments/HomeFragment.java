@@ -81,6 +81,7 @@ public class HomeFragment extends Fragment implements HomeInterface {
         shimmerCategory.stopShimmer();
         shimmerCategory.setVisibility(View.GONE);
         categoryRv.setAdapter(adapter);
+        adapter.onClick(this);
     }
     @Override
     public void showAllBook(BookAdapter adapter) {
@@ -97,6 +98,13 @@ public class HomeFragment extends Fragment implements HomeInterface {
             }
         });
     }
+
+    @Override
+    public void loadBookInCategory(String category) {
+        binding.tvAllBook.setText(category);
+        homePresenter.loadBookInCategory(category);
+    }
+
     @Override
     public void emptyList() {
         shimmerBook.stopShimmer();

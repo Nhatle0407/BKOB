@@ -60,6 +60,34 @@ public class HomePresenter {
         });
     }
 
+    public void loadBookInCategory(String category){
+        bookList = new ArrayList<>();
+        DatabaseReference bookref = database.getReference("books");
+        bookref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                bookList.clear();
+                if(snapshot.hasChildren()){
+                    for (DataSnapshot ds : snapshot.getChildren()){
+                        BookModel bookModel = ds.getValue(BookModel.class);
+                        if(bookModel.getCategory().equals(category)){
+                            bookList.add(bookModel);
+                        }
+                    }
+                    bookAdapter = new BookAdapter(context, bookList);
+                    homeInterface.showAllBook(bookAdapter);
+                }
+                else {
+                    homeInterface.emptyList();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
     public void loadCategory(){
         categoryList = new ArrayList<>();
         DatabaseReference categoryRef = database.getReference("category");
