@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.models.CategoryModel;
+import com.example.bkob.views.interfaces.DetailInterface;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +33,7 @@ import java.util.HashMap;
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
     private Context context;
     public ArrayList<BookModel> bookList;
+    private DetailInterface detailInterface;
 
     public BookAdapter(Context context, ArrayList<BookModel> bookList) {
         this.context = context;
@@ -68,6 +71,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
                 addToCard(bookModel);
             }
         });
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(detailInterface != null){
+                    detailInterface.detailScreen(bookModel);
+                }
+            }
+        });
     }
 
     private void addToCard(BookModel bookModel) {
@@ -102,11 +113,15 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
     public int getItemCount() {
         return bookList.size();
     }
+    public void onClick(DetailInterface detailInterface){
+        this.detailInterface = detailInterface;
+    }
 
     class BookHolder extends RecyclerView.ViewHolder{
         private ImageView bookImage;
         private TextView bookName, bookPrice;
         private ImageButton btnAdd;
+        private RelativeLayout item;
 
         public BookHolder(@NonNull View itemView) {
             super(itemView);
@@ -115,6 +130,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
             bookName = itemView.findViewById(R.id.name_item_search);
             bookPrice = itemView.findViewById(R.id.price_item_search);
             btnAdd = itemView.findViewById(R.id.btn_cart_item_search);
+            item = itemView.findViewById(R.id.item_selling);
         }
     }
 }

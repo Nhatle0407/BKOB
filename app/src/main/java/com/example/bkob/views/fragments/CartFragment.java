@@ -79,8 +79,6 @@ public class CartFragment extends Fragment implements CartInterface {
         cartRv.setAdapter(adapter);
         Log.d("CART", "" + adapter.getItemCount());
         Log.d("CART", adapter.getTotal());
-        binding.tvQuantity.setText(""+adapter.getItemCount());
-        binding.tvTotal.setText(adapter.getTotal());
     }
 
 }
