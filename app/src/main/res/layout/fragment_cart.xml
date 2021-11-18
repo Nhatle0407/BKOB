@@ -60,15 +60,15 @@
 
     <TextView
         android:id="@+id/tv_quantity"
-        style="@style/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_total"
-        android:layout_alignParentEnd="true"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
         android:text="0"
-        android:textColor="@color/main" />
+        style="@style/Header"
+        android:textColor="@color/main"
+        android:layout_above="@id/tv_total"/>
     
     <TextView
         android:id="@+id/tv_total_title"

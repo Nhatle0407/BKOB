@@ -5,15 +5,23 @@
     android:layout_marginLeft="20dp"
     android:layout_marginTop="20dp"
     android:layout_marginRight="20dp"
-    android:paddingTop="20dp"
+    android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:paddingHorizontal="10dp"
     android:layout_height="110dp">
+
+    <ImageView
+        android:id="@+id/point_unread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/point"
+        android:layout_alignParentEnd="true"/>
 
    <TextView
        android:id="@+id/tv_notify"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
        android:text="Bạn đã nhận được yêu cầu mua “Giáo trình 2” từ “Người dùng 2”"
        android:textColor="@color/header"
        style="@style/BoldBody"/>
@@ -28,7 +36,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/tv_notify_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="01/01/2021"
