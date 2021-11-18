@@ -28,13 +28,14 @@
         android:src="@drawable/ic_akar_icons_person" />
 
     <RelativeLayout
+        android:layout_toStartOf="@id/btn_edit"
         android:id="@+id/user_info"
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/account_title"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:layout_toRightOf="@+id/accountAvatar">
+        android:layout_toEndOf="@+id/accountAvatar">
 
         <TextView
             android:id="@+id/user_name"
@@ -62,19 +63,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/user_email"
             android:layout_marginTop="5dp"
-            android:text=""
             android:textColor="@color/body" />
 
     </RelativeLayout>
 
+
     <ImageButton
+        android:layout_marginEnd="30dp"
         android:id="@+id/btn_edit"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_below="@id/account_title"
-        android:layout_marginLeft="30px"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:layout_toRightOf="@id/user_info"
         android:background="@color/background"
         android:src="@drawable/ic_akar_icons_edit" />
 
