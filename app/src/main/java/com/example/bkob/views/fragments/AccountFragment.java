@@ -191,7 +191,6 @@ public class AccountFragment extends Fragment {
                         default:
                             break;
                     }
-                    Log.d("account", uid + ":  " + value);
                 }
 
             }

@@ -54,8 +54,6 @@ public class ChangeInfoFragment extends Fragment {
         databaseReference = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("users");
         userRef = databaseReference.child(firebaseUser.getUid());
 
-
-
         displayUserInfo();
 
         return binding.getRoot();
@@ -115,7 +113,6 @@ public class ChangeInfoFragment extends Fragment {
                         default:
                             break;
                     }
-                    Log.d("account", uid + ":  " + value);
                 }
 
             }
@@ -139,6 +136,7 @@ public class ChangeInfoFragment extends Fragment {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(getContext(), "Thay đổi thông tin thành công", Toast.LENGTH_SHORT).show();
+                replaceFragment(new AccountFragment());
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
