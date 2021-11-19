@@ -56,7 +56,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="100.000đ"
-        android:textColor="@color/header" />
+        android:textColor="@color/main" />
 
     <TextView
         android:id="@+id/name_item_detail"
@@ -75,7 +75,7 @@
             android:textColor="@color/body"
             android:text="Mô tả: "
             android:id="@+id/mota"
-            style="@style/Body"
+            style="@style/BoldBody"
             android:layout_below="@+id/name_item_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

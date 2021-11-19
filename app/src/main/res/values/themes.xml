@@ -70,7 +70,7 @@
 
     <style name="Description">
         <item name="android:fontFamily">@font/montserrat_medium</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/body</item>
     </style>
     <style name="Category">

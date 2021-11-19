@@ -55,7 +55,7 @@ public class DetailFragment extends Fragment {
             }
         });
         binding.nameItemDetail.setText(DetailSingleton.getBookModel().getName());
-        binding.price.setText(DetailSingleton.getBookModel().getPrice());
+        binding.price.setText(String.format("%,dđ", Integer.parseInt(DetailSingleton.getBookModel().getPrice())));
         binding.desDetail.setText(DetailSingleton.getBookModel().getDescription());
         try{
             Picasso.get().load(DetailSingleton.getBookModel().getImageUrl()).into(binding.avatarDetail);
