@@ -2,8 +2,10 @@ package com.example.bkob.presenters;
 
 import androidx.annotation.NonNull;
 
+import com.example.bkob.R;
 import com.example.bkob.models.LoginModel;
 import com.example.bkob.views.interfaces.LoginInterface;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -47,4 +49,5 @@ public class LoginPresenter {
             }
         });
     }
+
 }

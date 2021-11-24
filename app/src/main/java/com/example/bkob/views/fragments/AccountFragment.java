@@ -83,20 +83,6 @@ public class AccountFragment extends Fragment {
     }
 
     private void setUpButton(){
-        binding.btnYourProducts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isLogin){
-                    replaceFragment(new SellingFragment());
-                    getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
-                }
-                else {
-                    Intent intent = new Intent(getActivity(), AuthenticationActivity.class);
-                    startActivity(intent);
-                    getActivity().finish();
-                }
-            }
-        });
         binding.btnOrderReceive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

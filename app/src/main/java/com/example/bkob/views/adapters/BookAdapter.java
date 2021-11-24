@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import com.example.bkob.R;
 import com.example.bkob.models.BookModel;
 import com.example.bkob.models.CategoryModel;
+import com.example.bkob.presenters.BookFilter;
 import com.example.bkob.views.interfaces.DetailInterface;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,14 +33,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
+public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> implements Filterable {
     private Context context;
-    public ArrayList<BookModel> bookList;
+    public ArrayList<BookModel> bookList, filterList;
     private DetailInterface detailInterface;
+    private BookFilter filter;
 
     public BookAdapter(Context context, ArrayList<BookModel> bookList) {
         this.context = context;
         this.bookList = bookList;
+        this.filterList = bookList;
     }
 
     @NonNull
@@ -119,6 +124,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
     }
     public void onClick(DetailInterface detailInterface){
         this.detailInterface = detailInterface;
+    }
+
+    @Override
+    public Filter getFilter() {
+        if(filter == null){
+            filter = new BookFilter(this, filterList);
+        }
+        return filter;
     }
 
     class BookHolder extends RecyclerView.ViewHolder{

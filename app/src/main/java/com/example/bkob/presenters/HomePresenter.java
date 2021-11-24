@@ -112,4 +112,11 @@ public class HomePresenter {
             }
         });
     }
+
+    public void search(CharSequence s){
+        if(bookAdapter == null){
+            bookAdapter = new BookAdapter(context, bookList);
+        }
+        bookAdapter.getFilter().filter(s);
+    }
 }

@@ -22,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.bkob.R;
 import com.example.bkob.databinding.FragmentAddBookBinding;
@@ -60,7 +61,7 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
+        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.GONE);
 
         dialog = new CustomProgressDialog(getContext());
 
@@ -79,6 +80,13 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
 
         addBookPresenter.getCategory();
 
+        binding.btnBackAddBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new SellingFragment());
+            }
+        });
+
         binding.btnAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +100,13 @@ public class AddBookFragment extends Fragment implements AddBookInterface {
                 showImagePickDialog();
             }
         });
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainFragments, fragment)
+                .commit();
     }
 
     private void clickAddBook() {

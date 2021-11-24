@@ -83,26 +83,15 @@
         android:src="@drawable/ic_akar_icons_edit" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_your_products"
-        style="@style/ButtonSecond"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/accountAvatar"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/button_secondary"
-        android:text="Sản phẩm của bạn" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_order_receive"
         style="@style/ButtonSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_your_products"
+        android:layout_below="@id/accountAvatar"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/button_secondary"
         android:text="Đơn hàng đã nhận" />

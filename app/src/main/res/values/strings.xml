@@ -13,7 +13,6 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-
     <string name="gi_i_t_ch_2">Giải tích 2</string>
     <string name="detail">Chi tiết</string>
 </resources>

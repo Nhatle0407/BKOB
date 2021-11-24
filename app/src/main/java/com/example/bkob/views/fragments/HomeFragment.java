@@ -1,9 +1,17 @@
 package com.example.bkob.views.fragments;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,7 +42,6 @@ public class HomeFragment extends Fragment implements HomeInterface {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
@@ -48,7 +55,6 @@ public class HomeFragment extends Fragment implements HomeInterface {
         bookRv = binding.rvAllBook;
         shimmerCategory = binding.shimmerCategory;
         shimmerBook = binding.shimmerBook;
-
         loadCategory();
         loadAllBook();
 
@@ -64,6 +70,35 @@ public class HomeFragment extends Fragment implements HomeInterface {
             }
         });
 
+        binding.edtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId== EditorInfo.IME_ACTION_DONE){
+                    //Clear focus here from edittext
+                    binding.edtSearch.clearFocus();
+                    InputMethodManager imm = (InputMethodManager)v.getContext().getSystemService(getContext().INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        binding.edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                homePresenter.search(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
     }
 
     private void replaceFragment(Fragment fragment) {

@@ -34,15 +34,17 @@ public class SellingFragment extends Fragment implements SellingInterface {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getActivity().findViewById(R.id.bottom_navigation).setVisibility(View.VISIBLE);
+
         sellingPresenter = new SellingPresenter(getContext(), this);
         sellingRv = binding.rclSelling;
 
         sellingPresenter.loadSelling();
 
-        binding.btnBackSelling.setOnClickListener(new View.OnClickListener() {
+        binding.btnFloatAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                replaceFragment(new AccountFragment());
+            public void onClick(View v) {
+                replaceFragment(new AddBookFragment());
             }
         });
 

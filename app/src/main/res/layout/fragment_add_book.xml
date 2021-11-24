@@ -6,6 +6,15 @@
     android:background="@color/background"
     tools:context=".views.fragments.AddBookFragment">
 
+    <ImageButton
+        android:id="@+id/btn_back_add_book"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#f8f8f8"
+        android:src="@drawable/ic_akar_icons_arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/tv_addBook"

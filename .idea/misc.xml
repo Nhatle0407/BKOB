@@ -6,6 +6,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/background_body_color.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/background_choose.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/background_receive.xml" value="0.13125" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/background_search.xml" value="0.125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/background_sniper.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/background_white_corner16.xml" value="0.13125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/button_add.xml" value="0.19947916666666668" />
@@ -14,10 +15,13 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/circle_splash.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/edittext.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_arrow_left.xml" value="0.221875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_bell.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_camera.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_cart.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_chevron_down.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_home.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_person.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_akar_icons_plus.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/ic_icon_filter.xml" value="0.221875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/point.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BKOB/app/src/main/res/drawable/spinner.xml" value="0.20989583333333334" />

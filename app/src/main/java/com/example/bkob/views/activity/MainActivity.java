@@ -13,6 +13,7 @@ import com.example.bkob.views.fragments.AccountFragment;
 import com.example.bkob.views.fragments.AddBookFragment;
 import com.example.bkob.views.fragments.HomeFragment;
 import com.example.bkob.views.fragments.NotificationFragment;
+import com.example.bkob.views.fragments.SellingFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new HomeFragment();
                         break;
                     case R.id.add_book:
-                        fragment = new AddBookFragment();
+                        fragment = new SellingFragment();
                         break;
                     case R.id.notification:
                         fragment = new NotificationFragment();

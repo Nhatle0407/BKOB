@@ -71,6 +71,7 @@ public class LoginFragment extends Fragment implements LoginInterface {
                 clickLogin();
             }
         });
+
     }
 
     private void goToMainActivity() {

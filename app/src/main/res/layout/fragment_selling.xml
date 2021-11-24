@@ -6,15 +6,6 @@
     android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.SellingFragment">
-    <ImageButton
-        android:id="@+id/btn_back_selling"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:background="#f8f8f8"
-        android:src="@drawable/ic_akar_icons_arrow_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/selling"
@@ -24,9 +15,10 @@
         android:layout_marginTop="20dp"
         android:text="Sản phẩm của bạn"
         style="@style/Header" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcl_selling"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_selling"
@@ -34,5 +26,17 @@
         android:layout_below="@id/selling"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_float_add_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        app:srcCompat="@drawable/ic_akar_icons_plus"
+        android:clickable="true"
+        android:backgroundTint="@color/main"/>
 
 </RelativeLayout>
