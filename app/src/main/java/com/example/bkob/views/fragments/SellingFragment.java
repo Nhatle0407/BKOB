@@ -18,6 +18,8 @@ import com.example.bkob.databinding.FragmentSellingBinding;
 import com.example.bkob.presenters.SellingPresenter;
 import com.example.bkob.views.adapters.SellingAdapter;
 import com.example.bkob.views.interfaces.SellingInterface;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SellingFragment extends Fragment implements SellingInterface {
 
@@ -39,7 +41,14 @@ public class SellingFragment extends Fragment implements SellingInterface {
         sellingPresenter = new SellingPresenter(getContext(), this);
         sellingRv = binding.rclSelling;
 
-        sellingPresenter.loadSelling();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            sellingPresenter.loadSelling();
+        }
+        else{
+            binding.notLogin.setVisibility(View.VISIBLE);
+            binding.btnFloatAddBook.setVisibility(View.GONE);
+        }
 
         binding.btnFloatAddBook.setOnClickListener(new View.OnClickListener() {
             @Override

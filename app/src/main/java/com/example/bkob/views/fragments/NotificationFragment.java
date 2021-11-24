@@ -45,7 +45,7 @@ public class NotificationFragment extends Fragment implements NotifyInterface {
         notifyPresenter = new NotifyPresenter(getContext(), this);
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null){
-            binding.notifyEmpty.setVisibility(View.VISIBLE);
+            binding.notLogin.setVisibility(View.VISIBLE);
         }
         else{
             notifyPresenter.loadNotify();
