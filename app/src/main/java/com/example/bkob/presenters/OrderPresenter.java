@@ -103,7 +103,7 @@ public class OrderPresenter {
         hashMap.put("phone", ""+phone);
         hashMap.put("total", ""+total);
         hashMap.put("orderId", ""+orderId);
-        hashMap.put("status", "unread");
+        hashMap.put("status", "0");
 
         notifyRef.child(uid).child(notifyId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

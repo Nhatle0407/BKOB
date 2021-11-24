@@ -48,7 +48,7 @@ public class NotifyAdapter extends RecyclerView.Adapter<NotifyAdapter.NotifyHold
         String notify = "Bạn đã nhận được yêu cầu mua \"" + notifyModel.getBookName() + "\" từ \"" + notifyModel.getFromName() + "\"";
         holder.notify.setText(notify);
         holder.date.setText(notifyModel.getDate());
-        if(notifyModel.getStatus().equals("read")){
+        if(notifyModel.getStatus().equals("1")){
             holder.point.setVisibility(View.GONE);
             holder.itemView.setBackgroundResource(R.drawable.background_body_color);
         }
@@ -62,7 +62,7 @@ public class NotifyAdapter extends RecyclerView.Adapter<NotifyAdapter.NotifyHold
             public void onClick(View v) {
                 DatabaseReference notifyRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("notifycations");
                 Log.d("ORDER", ""+notifyModel.getNotifyId());
-                notifyRef.child(FirebaseAuth.getInstance().getUid()).child(notifyModel.getNotifyId()).child("status").setValue("read").addOnSuccessListener(new OnSuccessListener<Void>() {
+                notifyRef.child(FirebaseAuth.getInstance().getUid()).child(notifyModel.getNotifyId()).child("status").setValue("1").addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
 
