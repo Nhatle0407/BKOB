@@ -90,7 +90,7 @@ public class OrderPresenter {
         });
     }
 
-    private void pushNotification(String uid, String bookName, String fromName, String address, String phone, String total, String date, String orderId) {
+    private void pushNotification(String uid, String bookName, String fromName, String address, String phone, String total, String date, String orderId, String bookImage) {
         DatabaseReference notifyRef = database.getReference("notifycations");
         String notifyId = "notify" + System.currentTimeMillis();
 
@@ -103,9 +103,27 @@ public class OrderPresenter {
         hashMap.put("phone", ""+phone);
         hashMap.put("total", ""+total);
         hashMap.put("orderId", ""+orderId);
+        hashMap.put("bookImage", ""+bookImage);
         hashMap.put("status", "0");
 
         notifyRef.child(uid).child(notifyId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                pushBuy(uid, bookName, total, date, bookImage, orderId);
+            }
+        });
+    }
+
+    private void pushBuy(String uid, String bookName, String price, String date, String bookImage, String orderId) {
+        DatabaseReference buyRef = database.getReference("buy");
+
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("bookName", ""+bookName);
+        hashMap.put("date", ""+date);
+        hashMap.put("price", ""+price);
+        hashMap.put("orderId", ""+orderId);
+        hashMap.put("bookImage", ""+bookImage);
+        buyRef.child(uid).child(orderId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 orderInterface.orderSuccess();
@@ -141,7 +159,7 @@ public class OrderPresenter {
             orderRef.child(orderId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
-                    pushNotification(bookModel.getUserId(), bookModel.getName(), userModel.getName(),userModel.getAddress(), userModel.getPhone(), bookModel.getPrice(), date, orderId);
+                    pushNotification(bookModel.getUserId(), bookModel.getName(), userModel.getName(),userModel.getAddress(), userModel.getPhone(), bookModel.getPrice(), date, orderId, bookModel.getImageUrl());
                 }
             });
         }

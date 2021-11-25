@@ -1,7 +1,7 @@
 package com.example.bkob.models;
 
 public class NotifyModel {
-    private String notifyId, bookName, date, fromName, orderId, status, address, phone, total;
+    private String notifyId, bookName, date, fromName, orderId, status, address, phone, total, bookImage;
 
     public String getNotifyId() {
         return notifyId;
@@ -21,6 +21,14 @@ public class NotifyModel {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getBookImage() {
+        return bookImage;
+    }
+
+    public void setBookImage(String bookImage) {
+        this.bookImage = bookImage;
     }
 
     public void setPhone(String phone) {

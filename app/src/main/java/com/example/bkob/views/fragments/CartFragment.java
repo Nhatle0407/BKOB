@@ -21,6 +21,8 @@ import com.example.bkob.presenters.CartPresenter;
 import com.example.bkob.views.adapters.CartAdapter;
 import com.example.bkob.views.interfaces.CartInterface;
 import com.example.bkob.views.interfaces.ChangeInterface;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,16 @@ public class CartFragment extends Fragment implements CartInterface {
         cartPresenter = new CartPresenter(getContext(), this);
         cartRv = binding.rclCart;
 
-                cartPresenter.loadCart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            cartPresenter.loadCart();
+        }
+        else{
+            binding.btnBuyNow.setVisibility(View.GONE);
+            binding.tvQuantity.setVisibility(View.GONE);
+            binding.tvQuantityTitle.setVisibility(View.GONE);
+        }
+
 
         binding.btnBackCart.setOnClickListener(new View.OnClickListener() {
             @Override

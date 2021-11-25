@@ -20,6 +20,7 @@ import com.example.bkob.databinding.FragmentHomeBinding;
 import com.example.bkob.models.BookModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,6 +43,11 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user == null){
+            binding.btnAddToCart.setVisibility(View.GONE);
+            binding.purchase.setVisibility(View.GONE);
+        }
         binding.btnBackDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +72,7 @@ public class DetailFragment extends Fragment {
         binding.purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 replaceFragment(new OrderFragment());
             }
         });

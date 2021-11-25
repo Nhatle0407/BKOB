@@ -49,7 +49,7 @@ public class OrderRFragment extends Fragment  {
         binding.userAddressReceive.setText(OrderSingleton.getNotifyModel().getAddress());
         binding.userSdt.setText(OrderSingleton.getNotifyModel().getPhone());
         binding.userDateOrder.setText(OrderSingleton.getNotifyModel().getDate());
-        binding.sumMoneyOrderReceive.setText(OrderSingleton.getNotifyModel().getTotal());
+        binding.sumMoneyOrderReceive.setText(String.format("%,dđ", Integer.parseInt(OrderSingleton.getNotifyModel().getTotal().toString())));
 
         binding.btnBackOrderReceive.setOnClickListener(new View.OnClickListener() {
             @Override

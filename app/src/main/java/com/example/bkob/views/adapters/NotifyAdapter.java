@@ -61,7 +61,6 @@ public class NotifyAdapter extends RecyclerView.Adapter<NotifyAdapter.NotifyHold
             @Override
             public void onClick(View v) {
                 DatabaseReference notifyRef = FirebaseDatabase.getInstance("https://bkob-a0229-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("notifycations");
-                Log.d("ORDER", ""+notifyModel.getNotifyId());
                 notifyRef.child(FirebaseAuth.getInstance().getUid()).child(notifyModel.getNotifyId()).child("status").setValue("1").addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
