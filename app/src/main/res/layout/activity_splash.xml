@@ -40,6 +40,8 @@
         android:textColor="@color/main"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/app_name"
+        android:layout_marginHorizontal="10dp"
+        android:textAlignment="center"
         android:layout_marginTop="20dp"
         style="@style/Caption"/>
 
